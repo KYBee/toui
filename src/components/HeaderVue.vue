@@ -22,11 +22,11 @@ a {
 }
 
 img {
-  width: 7rem;
+  width: 20rem;
 }
 
 .program-icon {
-  margin: 3rem 0;
+  margin: 2rem;
   display: flex;
   justify-content: center;
 }
