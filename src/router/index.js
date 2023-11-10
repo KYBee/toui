@@ -1,25 +1,47 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
+    // 홈 화면
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('@/views/HomeView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    // 닉네임 설정 기능
+    path: '/one',
+    name: 'one',
+    component: () => import('@/views/OneView.vue')
+  },
+  {
+    // 원격 접속 기능
+    path: '/two',
+    name: 'two',
+    component: () => import('@/views/TwoView.vue')
+  },
+  {
+    // 키보드 음차모드
+    path: '/three',
+    name: 'three',
+    component: () => import('@/views/ThreeView.vue')
+  },
+  {
+    // 자주쓰는 아이콘 키우기
+    path: '/four',
+    name: 'four',
+    component: () => import('@/views/FourView.vue')
+  },
+  {
+    // 앱 정리 기능
+    path: '/five',
+    name: 'five',
+    component: () => import('@/views/FiveView.vue')
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;

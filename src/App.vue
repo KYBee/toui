@@ -1,10 +1,34 @@
 <template>
+  <HeaderVue />
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">홈화면</router-link> |
+    <router-link to="/one">첫번째</router-link> |
+    <router-link to="/two">두번째</router-link> |
+    <router-link to="/three">세번째</router-link> |
+    <router-link to="/four">네번째</router-link> |
+    <router-link to="/five">다섯번째</router-link>
   </nav>
   <router-view/>
+  <FooterVue />
 </template>
+
+
+<script>
+import HeaderVue from '@/components/HeaderVue';
+import FooterVue from '@/components/FooterVue';
+
+export default {
+  data() {
+
+  },
+
+  name: 'App',
+  components: {
+    HeaderVue,
+    FooterVue
+  }
+}
+</script>
 
 <style>
 #app {
