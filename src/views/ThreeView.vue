@@ -97,16 +97,13 @@ export default {
     updatedUserId: function(event) {
       const pattern1 = /^[a-zA-Z1-9]+$/;
       const pattern3 = /[!?@#$%^&*():;+-=~{}<>_[|"',./`₩]/g;
-      const pattern2 = /\s/g;
+      //const pattern2 = /\s/g;
       
       //입력할 때 바로 적용이 안되는 이슈 있음
       this.userId = event.target.value;
       this.tempId = event.target.value.substring(this.currentUserIdLength, this.userId.length);
-
-      console.log(pattern1.test(this.tempId) || pattern2.test(this.tempId) || pattern3.test(this.tempId));
-      console.log(pattern2.test(this.tempId));
       
-      if (pattern1.test(this.tempId) || pattern2.test(this.tempId) || pattern3.test(this.tempId)) {
+      if (pattern1.test(this.tempId) || pattern3.test(this.tempId)) {
         this.currentUserIdLength = this.userId.length;
         console.log("hello")
       } else if (this.userId.length < this.currentUserIdLength) {
