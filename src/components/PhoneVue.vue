@@ -97,10 +97,6 @@ export default {
   background: url('@/assets/phone-background.png');
 }
 
-
-
-
-
 .middle {
   height: 600px;
 }

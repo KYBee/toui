@@ -40,8 +40,8 @@ export default {
 
 
 .topbar {
-  margin-top: 20px;
-  height: 25px;
+  padding: 10px 0;
+  height: 30px;
   font: white;
   display: flex;
   justify-content:space-between;
@@ -50,6 +50,9 @@ export default {
 
 .top-item {
   margin: .1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-left {
