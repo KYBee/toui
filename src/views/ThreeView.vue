@@ -289,7 +289,7 @@ export default {
 .middle {
   background: white;
 
-  height: 600px;
+  height: 650px;
   padding: 10px 0;
 }
 
