@@ -13,7 +13,20 @@
       <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" />
     </div>
     <div class="phone middle">
-      <AppVue />
+      <div class="appContainer">
+        <div class="appLine">
+          <div v-for="(item, index) in applications1" v-bind:key="index" class="appItem"><AppVue v-bind:application="item" /></div>
+        </div>
+        <div class="appLine">
+          <div v-for="(item, index) in applications2" v-bind:key="index" class="appItem"><AppVue v-bind:application="item" /></div>
+        </div>
+        <div class="appLine">
+          <div v-for="(item, index) in applications3" v-bind:key="index" class="appItem"><AppVue v-bind:application="item" /></div>
+        </div>
+        <div class="appLine">
+          <div v-for="(item, index) in applications4" v-bind:key="index" class="appItem"><AppVue v-bind:application="item" /></div>
+        </div>
+      </div>
     </div>
     <div class="phone bottombar">
       <div><font-awesome-icon :icon="['fas', 'bars']" rotation=90 /></div>
@@ -30,27 +43,30 @@ export default {
   data() {
     return {
       now: 0,
-      applications: [
-        ["AliExpress", "AliExpress", "파일경로", false],
-        ["이마트에브리데이", "이마트에브리데이", "파일경로", false],
-        ["이마트몰", "이마트몰", "파일경로", false],
-        ["이마트", "이마트", "파일경로", false],
-        ["올원뱅크", "올원뱅크", "파일경로", false],
-        ["NH스마트뱅킹", "NH스마트뱅킹", "파일경로", false],
-        ["Chrome", "Chrome", "파일경로", false],
-        ["토스", "토스", "파일경로", false],
-        ["G마켓", "G마켓", "파일경로", false],
-        ["KB라이프", "KB라이프", "파일경로", false],
-        ["KB국민은행", "KB국민은행", "파일경로", false],
-        ["KB증권", "KB증권", "파일경로", false],
-        ["LINE", "LINE", "파일경로", false],
-        ["Netflix", "Netflix", "파일경로", false],
-        ["Samsung Health", "Samsung Health", "파일경로", false],
-        ["왓챠", "왓챠", "파일경로", false],
-        ["Samsung Pay", "Samsung Pay", "파일경로", false],
-        ["SmartThings", "SmartThings", "파일경로", false],
-        ["Sound Cloud", "Sound Cloud", "파일경로", false],
-      ],
+      applications1: [],
+      applications2: [],
+      applications3: [],
+      applications4: [],
+      appList: [
+        {name: "AliExpress", nickname: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), mode: false},
+        {name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), mode: false},
+        {name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), mode: false},
+        {name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), mode: false},
+        {name: "NH스마트뱅킹", nickname: "NH스마트뱅킹", src: require("@/assets/img/icon/NH스마트뱅킹.png"), mode: false},
+        {name: "Chrome", nickname: "Chrome", src: require("@/assets/img/icon/Chrome.png"), mode: false},
+        {name: "TVING", nickname: "TVING", src: require("@/assets/img/icon/TVING.png"), mode: false},
+        {name: "G마켓", nickname: "G마켓", src: require("@/assets/img/icon/G마켓.png"), mode: false},
+        {name: "KB라이프", nickname: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), mode: false},
+        {name: "KB국민은행", nickname: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), mode: false},
+        {name: "KB증권", nickname: "KB증권", src: require("@/assets/img/icon/KB증권.png"), mode: false},
+        {name: "LINE", nickname: "LINE", src: require("@/assets/img/icon/LINE.png"), mode: false},
+        {name: "Spotv", nickname: "Spotv", src: require("@/assets/img/icon/Spotv.png"), mode: false},
+        {name: "Samsung Health", nickname: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), mode: false},
+        {name: "왓챠", nickname: "왓챠", src: require("@/assets/img/icon/왓챠.png"), mode: false},
+        {name: "Samsung Pay", nickname: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), mode: false},
+        {name: "SmartThings", nickname: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), mode: false},
+        {name: "Sound Cloud", nickname: "Sound Cloud", src: require("@/assets/img/icon/Sound Cloud.png"), mode: false},
+      ]
     }
   },
   methods: {
@@ -71,6 +87,23 @@ export default {
   },
   mounted() {
     setInterval(this.updateNow, 1000);
+
+    let index = -1;
+    for (let i = 0; i < this.appList.length; i++) {
+      if (i % 4 == 0) {
+        index++;
+      }
+
+      if (index == 0) {
+        this.applications1.push(this.appList[i]);
+      } else if (index == 1) {
+        this.applications2.push(this.appList[i]);
+      } else if (index == 2) {
+        this.applications3.push(this.appList[i]);
+      } else if (index == 3) {
+        this.applications4.push(this.appList[i]);
+      }
+    }
   },
   components: {
     AppVue,
@@ -152,6 +185,29 @@ export default {
 }
 
 .phone {
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  margin: .8rem auto;
+  width: 320px;
+}
+
+.appLine {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.appItem {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 80px;
+  height: 95px;
 }
 
 </style>
