@@ -1,13 +1,26 @@
 <template>
-    <div></div>
+    <div class="phoneContainer">
+        <PhoneVue />
+    </div>
 </template>
 
 <script>
-export default {
+import PhoneVue from '@/components/PhoneVue.vue';
 
+export default {
+  data() {
+
+  },
+
+  components: {
+    PhoneVue,
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.phoneContainer {
+    width: 360px;
+    margin: 0 auto;
+}
 </style>
