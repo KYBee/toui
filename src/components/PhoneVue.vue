@@ -1,17 +1,7 @@
 <template>
   <div class="phone-background">
-    <div class="phone topbar">
-      <div class="topbar-item item-left">{{ now }}</div>
-      <div class="topbar-item item-right">
-        <font-awesome-icon class="top-item" :icon="['fas', 'wifi']" />
-        <font-awesome-icon class="top-item" :icon="['fas', 'signal']" />
-        <font-awesome-icon class="top-item" :icon="['fas', 'battery-three-quarters']" rotation=270 />
-      </div>
-    </div>
-    <div class="phone searchbar">
-      <input class="search" type="text" placeholder="검색">
-      <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" />
-    </div>
+    <PhoneTopBarVue />
+    <SearchBarVue />
     <div class="phone middle">
       <div class="appContainer">
         <div class="appLine">
@@ -28,16 +18,15 @@
         </div>
       </div>
     </div>
-    <div class="phone bottombar">
-      <div><font-awesome-icon :icon="['fas', 'bars']" rotation=90 /></div>
-      <div><font-awesome-icon :icon="['far', 'square']" /></div>
-      <div><font-awesome-icon :icon="['fas', 'chevron-left']" /></div>
-    </div>
+    <PhoneBottomBarVue />
   </div>
 </template>
 
 <script>
 import AppVue from "@/components/ApplicationVue.vue";
+import PhoneTopBarVue from "@/components/PhoneTopBarVue.vue";
+import SearchBarVue from '@/components/SearchBarVue';
+import PhoneBottomBarVue from '@/components/PhoneBottomBarVue';
 
 export default {
   data() {
@@ -69,25 +58,9 @@ export default {
       ]
     }
   },
-  methods: {
-    updateNow() {
-      let cd = new Date();
-      this.now = this.zeroPadding(cd.getHours(), 2) + ":" + this.zeroPadding(cd.getMinutes(), 2);
-    },
-    zeroPadding(num, digit) {
-      let zero = "";
-      for (let i = 0; i < digit; i++) {
-        zero += 0;
-      }
-      return (zero + num).slice(-digit);
-    }
-  },
-  created() {
-    this.updateNow();
-  },
-  mounted() {
-    setInterval(this.updateNow, 1000);
 
+
+  mounted() {
     let index = -1;
     for (let i = 0; i < this.appList.length; i++) {
       if (i % 4 == 0) {
@@ -106,7 +79,11 @@ export default {
     }
   },
   components: {
+    PhoneTopBarVue,
+    PhoneBottomBarVue,
     AppVue,
+    SearchBarVue,
+
   }
 }
 </script>
@@ -120,71 +97,12 @@ export default {
   background: url('@/assets/phone-background.png');
 }
 
-.topbar {
-  margin-top: 20px;
-  height: 25px;
-  font: white;
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-}
-
-.top-item {
-  margin: .1rem;
-}
-
-.item-left {
-  font-weight: 600;
-}
 
 
-.topbar-item {
-  font-size: .8rem;
-  margin: 0 .5rem;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.searchbar {
-  height: 40px;
-  background: #D9D9D9;
-  border-radius: 20px;
-  width:95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-  border: 0px;
-  opacity: 0.5;
-  margin: 0 auto;
-}
-
-.search {
-  height: 100%;
-  background: 0;
-  width: 90%;
-  border: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
 .middle {
   height: 600px;
-}
-
-.bottombar {
-  height: 40px;
-  display: flex;
-  color: white;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.phone {
 }
 
 .appContainer {
