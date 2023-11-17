@@ -30,6 +30,12 @@ const routes = [
     path: '/five',
     name: 'five',
     component: () => import('@/views/FiveView.vue')
+  },
+  {
+    // 앱 정리 기능
+    path: '/setting/:app',
+    name: 'setting',
+    component: () => import('@/components/AppSettingVue.vue'),
   }
 ];
 

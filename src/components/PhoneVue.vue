@@ -12,7 +12,7 @@
                   <div class="memo-middle">{{this.application1.nickname}}</div>
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" alt="">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(1)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -32,7 +32,7 @@
                   <div class="memo-middle">{{this.application2.nickname}}</div>
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" alt="">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(2)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -52,7 +52,7 @@
                   <div class="memo-middle">{{this.application3.nickname}}</div>
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" alt="">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(3)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -99,9 +99,9 @@ export default {
   },
 
   created() {
-    this.application1 = {idx: 0, name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), mode: false, isModalOpen: false};
-    this.application2 = {idx: 1, name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), mode: false, isModalOpen: false};
-    this.application3 = {idx: 2, name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), mode: false, isModalOpen: false};
+    this.application1 = {idx: 0, name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), isNickname: false};
+    this.application2 = {idx: 1, name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), isNickname: false};
+    this.application3 = {idx: 2, name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), isNickname: false};
   },
 
   methods: {
@@ -131,6 +131,23 @@ export default {
       this.modalTwoCheck = false;
       this.modalThreeCheck = false;
     },
+    goSetting: function(value) {
+      let app = {};
+      if (value === 1) {
+        app = this.application1;
+      } else if (value === 2) {
+        app = this.application2;
+      } else {
+        app = this.application3;
+      }
+      console.log(app);
+
+      app.src = `@/assets/img/icon/${app.name}.png`;
+      
+      this.$router.push({name:"setting", params: {
+        "app": JSON.stringify([app.name, app.nickname, app.src, app.isNickname,])
+      }});
+    }
   }
 }
 </script>
