@@ -14,12 +14,6 @@ const routes = [
     component: () => import('@/views/OneView.vue')
   },
   {
-    // 원격 접속 기능
-    path: '/two',
-    name: 'two',
-    component: () => import('@/views/TwoView.vue')
-  },
-  {
     // 키보드 음차모드
     path: '/three',
     name: 'three',

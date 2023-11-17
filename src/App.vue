@@ -31,6 +31,11 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,7 +45,7 @@ export default {
 }
 
 nav {
-  padding: 30px;
+  margin: 30px;
 }
 
 nav a {

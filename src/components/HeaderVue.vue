@@ -16,6 +16,17 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  height: 300px;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -26,8 +37,15 @@ img {
 }
 
 .program-icon {
-  margin: 2rem;
   display: flex;
   justify-content: center;
+}
+
+.program-title {
+  margin: 16px 0;
+}
+
+h2 {
+  margin: 0;
 }
 </style>
