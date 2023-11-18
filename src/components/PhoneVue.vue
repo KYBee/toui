@@ -255,21 +255,21 @@ export default {
 .modal-wrap-1 {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px + 60px);
+  top: calc(300px + 22px);
   width: 360px;
   height: 723px;
 }
 .modal-wrap-2 {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px + 60px);
+  top: calc(300px + 22px);
   width: 360px;
   height: 723px;
 }
 .modal-wrap-3 {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px + 60px);
+  top: calc(300px + 22px);
   width: 360px;
   height: 723px;
 }
@@ -288,7 +288,7 @@ export default {
   align-items: center; 
   border-radius: 20px;
   position:relative;
-  top: 150px;
+  top: 130px;
   z-index: 899;
   left: 20px;
 }
@@ -355,7 +355,7 @@ export default {
 .app-setting-modal {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px + 60px);
+  top: calc(300px);
   width: 360px;
   z-index: 999;
 }

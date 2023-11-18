@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header location.href="/">
     <div class="program-icon">
       <a href="/"> <img src="@/assets/logo.png" alt="icon" /></a>
     </div>

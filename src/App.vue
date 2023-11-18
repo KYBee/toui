@@ -1,13 +1,5 @@
 <template>
   <HeaderVue />
-  <nav>
-    <router-link to="/">홈화면</router-link> |
-    <router-link to="/one">첫번째</router-link> |
-    <router-link to="/two">두번째</router-link> |
-    <router-link to="/three">세번째</router-link> |
-    <router-link to="/four">네번째</router-link> |
-    <router-link to="/five">다섯번째</router-link>
-  </nav>
   <router-view/>
   <FooterVue />
 </template>
