@@ -1,5 +1,5 @@
 <template>
-  <div class="appContainer">
+  <div class="appTotalContainer">
     <div class="appIconContainer">
       <img class="appIcon" :src="this.application.src" alt="">
     </div>
@@ -18,9 +18,11 @@ export default {
       default: () => {
         return {
           name: "",
-          nickname:"",
           src: "",
-          mode: false,
+          function:"",
+          color:"",
+          company:"",
+          numCnt:0,
         }
       }
     }
@@ -31,24 +33,15 @@ export default {
       isEdit: false,
     }
   },
-  methods: {
-    edit: function() {
-      this.isEdit = !this.isEdit;
-    },
-    changeName: function (e) {
-      this.isEdit=true;
-      this.application.mode != this.application.mode;
 
-      console.log(e);
-      console.log(this.application.mode)
-      console.log("clicked")
-      console.log(this.application.idx);
-      this.$emit("changeName", this.application.idx, e.value);
-    },
+  created() {
+    console.log(this.application)
+  },
+
+  methods: {
 
   },
   components: {
-    //AppMemoVue,
   },
 }
 </script>
@@ -78,9 +71,12 @@ export default {
 .appName {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-size: .6rem;
   padding: .3rem;
   color: white;
+  width: 60px;
+  height: 40px;
+  flex-wrap: wrap;
 }
 </style>
