@@ -117,9 +117,10 @@ export default {
   align-content: space-around;
   margin: .8rem 10px;
   width: 680px;
-  height: 600px;
+  height: 570px;
   flex-wrap: wrap;
   overflow: scroll;
+  right: 0;
 }
 
 .appLine {

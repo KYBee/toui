@@ -3,11 +3,11 @@
     <PhoneTopBarVue />
     <SearchBarVue />
     <div class="phone middle">
-      <div class="appContainer">
+      <div class="appContainerOne">
         <div class="appLine">
           <div class="appItem">
 
-            <div class="appTotalContainer"  @click="modalOpen(1)">
+            <div class="appTotalContainerOne"  @click="modalOpen(1)">
               <div class="appIconContainer">
                 <img class="appIcon" :src="this.application1.src" alt="">
               </div>
@@ -37,7 +37,7 @@
 
           <div class="appItem">
             
-            <div class="appTotalContainer"  @click="modalOpen(2)">
+            <div class="appTotalContainerOne"  @click="modalOpen(2)">
               <div class="appIconContainer">
                 <img class="appIcon" :src="this.application2.src" alt="">
               </div>
@@ -68,7 +68,7 @@
 
           <div class="appItem">
             
-            <div class="appTotalContainer"  @click="modalOpen(3)">
+            <div class="appTotalContainerOne"  @click="modalOpen(3)">
               <div class="appIconContainer">
                 <img class="appIcon" :src="this.application3.src" alt="">
               </div>
@@ -351,6 +351,9 @@ export default {
   cursor: pointer;
 }
 
+.appContainerOne {
+  padding: 16px 10px;
+}
 
 .app-setting-modal {
   position: absolute;
@@ -365,7 +368,7 @@ export default {
   background: #fff;
 }
 
-.appTotalContainer {
+.appTotalContainerOne {
   display: flex;
   flex-direction: column;
   justify-content: center;
