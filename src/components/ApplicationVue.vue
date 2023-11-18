@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-.appContainer {
+.appTotalContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -5,14 +5,24 @@
     <div class="phone middle">
       <div class="appContainer">
         <div class="appLine">
-          <div class="appItem"><AppVue v-bind:application="application1" @changeName="setNickname" @click="modalOpen(1)" />
+          <div class="appItem">
+
+            <div class="appTotalContainer"  @click="modalOpen(1)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application1.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application1.isNickname===false">{{ this.application1.name }}</div>
+              <div class="appName" v-if="this.application1.isNickname===true">{{ this.application1.nickname }}</div>
+            </div>
+
             <div class="modal-wrap-1" v-show="modalOneCheck" @click.self="closeModal">
               <div class="memoContainer">
                 <div class="memoName">
-                  <div class="memo-middle">{{this.application1.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application1.isNickname===false">{{this.application1.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application1.isNickname===true">{{this.application1.name}}</div>
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(1)">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(1)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -25,14 +35,25 @@
             </div>
           </div>
 
-          <div class="appItem"><AppVue v-bind:application="application2" @changeName="setNickname" @click="modalOpen(2)" />
+          <div class="appItem">
+            
+            <div class="appTotalContainer"  @click="modalOpen(2)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application2.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application2.isNickname===false">{{ this.application2.name }}</div>
+              <div class="appName" v-if="this.application2.isNickname===true">{{ this.application2.nickname }}</div>
+            </div>
+            
             <div class="modal-wrap-2" v-show="modalTwoCheck" @click.self="closeModal">
               <div class="memoContainer">
                 <div class="memoName">
-                  <div class="memo-middle">{{this.application2.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application2.isNickname===false">{{this.application2.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application2.isNickname===true">{{this.application2.name}}</div>
+
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(2)">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(2)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -45,14 +66,25 @@
             </div>
           </div>
 
-          <div class="appItem"><AppVue v-bind:application="application3" @changeName="setNickname" @click="modalOpen(3)" />
+          <div class="appItem">
+            
+            <div class="appTotalContainer"  @click="modalOpen(3)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application3.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application3.isNickname===false">{{ this.application3.name }}</div>
+              <div class="appName" v-if="this.application3.isNickname===true">{{ this.application3.nickname }}</div>
+            </div>
+            
             <div class="modal-wrap-3" v-show="modalThreeCheck" @click.self="closeModal">
               <div class="memoContainer">
                 <div class="memoName">
-                  <div class="memo-middle">{{this.application3.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application3.isNickname===false">{{this.application3.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application3.isNickname===true">{{this.application3.name}}</div>
+
                   <div class="memo-right">
                     <img src="@/assets/editIcon.svg" alt="" @click="changeName">
-                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="goSetting(3)">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(3)">
                   </div>
                 </div>
                 <div class="memoOption">
@@ -68,15 +100,23 @@
       </div>
     </div>
     <PhoneBottomBarVue />
-    
+    <div class="app-setting-modal" v-show="appSettingModal1">
+      <AppSettingVue :app="this.application1" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+    <div class="app-setting-modal" v-show="appSettingModal2">
+      <AppSettingVue :app="this.application2" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+    <div class="app-setting-modal" v-show="appSettingModal3">
+      <AppSettingVue :app="this.application3" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
   </div>
 </template>
 
 <script>
-import AppVue from "@/components/ApplicationVue.vue";
 import PhoneTopBarVue from "@/components/PhoneTopBarVue.vue";
 import SearchBarVue from '@/components/SearchBarVue';
 import PhoneBottomBarVue from '@/components/PhoneBottomBarVue';
+import AppSettingVue from "./AppSettingVue.vue";
 
 export default {
   data() {
@@ -86,6 +126,10 @@ export default {
       modalTwoCheck: false,
       modalThreeCheck: false,
       activeModal: 0,
+      appSettingModal1: false,
+      appSettingModal2: false,
+      appSettingModal3: false,
+      app:{},
     }
   },
 
@@ -93,15 +137,14 @@ export default {
   components: {
     PhoneTopBarVue,
     PhoneBottomBarVue,
-    AppVue,
     SearchBarVue,
-
+    AppSettingVue,
   },
 
   created() {
-    this.application1 = {idx: 0, name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), isNickname: false};
-    this.application2 = {idx: 1, name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), isNickname: false};
-    this.application3 = {idx: 2, name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), isNickname: false};
+    this.application1 = {idx: 1, name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), isNickname: false};
+    this.application2 = {idx: 2, name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), isNickname: false};
+    this.application3 = {idx: 3, name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), isNickname: false};
   },
 
   methods: {
@@ -131,22 +174,42 @@ export default {
       this.modalTwoCheck = false;
       this.modalThreeCheck = false;
     },
-    goSetting: function(value) {
-      let app = {};
-      if (value === 1) {
-        app = this.application1;
-      } else if (value === 2) {
-        app = this.application2;
-      } else {
-        app = this.application3;
-      }
-      console.log(app);
+    closeAppSettingModal: function() {
+      this.appSettingModal1 = false; 
+      this.appSettingModal2 = false; 
+      this.appSettingModal3 = false; 
+      this.modalOneCheck = false;
+      this.modalTwoCheck = false;
+      this.modalThreeCheck = false;
+    },
+    openAppSettingModal: function(value) {
 
-      app.src = `@/assets/img/icon/${app.name}.png`;
-      
-      this.$router.push({name:"setting", params: {
-        "app": JSON.stringify([app.name, app.nickname, app.src, app.isNickname,])
-      }});
+      if (value === 1) {
+        this.appSettingModal1 = true;
+      } else if (value === 2) {
+        this.appSettingModal2 = true;
+      } else {
+        this.appSettingModal3 = true;
+      }
+    },
+    nicknameChanged: function(value, nickname) {
+      if (value === 1) {
+        this.application1.nickname = nickname;
+      } else if (value === 2) {
+        this.application2.nickname = nickname;
+      } else {
+        this.application3.nickname = nickname;
+      }
+    },
+    modeChanged: function(value, isNickname) {
+      if (value === 1) {
+        this.application1.isNickname = isNickname;
+      } else if (value === 2) {
+        this.application2.isNickname = isNickname;
+
+      } else {
+        this.application3.isNickname = isNickname;
+      }
     }
   }
 }
@@ -285,6 +348,50 @@ export default {
 
 .editBtn {
   cursor: pointer;
+}
+
+
+.app-setting-modal {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px + 22px + 60px);
+  width: 360px;
+  z-index: 999;
+}
+/* modal or popup */
+.modal-container {
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+
+.appTotalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+.appIconContainer {
+  width: 60px;
+  height: 60px;
+  border: 0px;
+  border-radius: 25px;
+}
+
+.appIcon {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.appName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .6rem;
+  padding: .3rem;
+  color: white;
 }
 
 </style>

@@ -4,7 +4,7 @@
       <div class="app-detail-middle">
           <div class="app-info">
               <div class="app-info-top">
-                  <div><font-awesome-icon :icon="['fas', 'chevron-left']" /></div>
+                  <div @click="closeAppSettingModal" style="cursor: pointer"><font-awesome-icon :icon="['fas', 'chevron-left']" /></div>
                   <div class="app-info-title">애플리케이션 정보</div>
               </div>
               <div class="app-info-bottom">
@@ -29,7 +29,7 @@
                               별칭
                           </div>
                           <div class="app-option-subtitle" >
-                              {{this.application.nickname}}
+                              {{this.nickname}}
                           </div>
                       </div>
                       <div class="app-option-item-toggle">
@@ -42,8 +42,8 @@
                               </div>
                           </div>
                           <div class="app-option-toggle">
-                              <img v-if="this.application.isNickname === true" :src="this.toggleOn" alt="" @click="changeMode">
-                              <img v-if="this.application.isNickname === false" :src="this.toggleOff" alt="" @click="changeMode">
+                              <img v-if="this.isNickname === true" :src="this.toggleOn" alt="" @click="changeMode">
+                              <img v-if="this.isNickname === false" :src="this.toggleOff" alt="" @click="changeMode">
                           </div>
                       </div>
                   </div>
@@ -134,7 +134,11 @@
               </div>
           </div>
       </div>
-      <PhoneBottomBarVue class="app-detail-bar"/>
+      <div class="phone bottombar" style="color:black">
+        <div><font-awesome-icon :icon="['fas', 'bars']" rotation=90 /></div>
+        <div><font-awesome-icon :icon="['far', 'square']" @click="closeAppSettingModal" style="cursor: pointer"/></div>
+        <div><font-awesome-icon :icon="['fas', 'chevron-left']" @click="closeAppSettingModal" style="cursor: pointer" /></div>
+      </div>
 
       <div class="nickname-modal-wrap" v-show="nicknameModalCheck" @click.self="closeModal">
           <div class="nicknameModalContainer" >
@@ -160,11 +164,23 @@
 
 <script>
 import PhoneTopBarVue from '@/components/PhoneTopBarVueBlack.vue';
-import PhoneBottomBarVue from '@/components/PhoneBottomBarVueBlack.vue';
 
 export default {
+  name: "AppSettingVue",
+  props: {
+    app: {
+      type: Object,
+      default: () => {
+        return {
+          name: "",
+          nickname:"",
+          src: "",
+          mode: false,
+        }
+      }
+    }
+  },
   components: {
-      PhoneBottomBarVue,
       PhoneTopBarVue,
   },
   data() {
@@ -179,27 +195,25 @@ export default {
           toggleOff: require("@/assets/toggle/toggle-off.svg"),
           nicknameModalCheck: false,
           nicknameInput:"",
+          nickname: "",
+          isNickname: false,
       }
   },
+  
 
   created() {
   },
 
   mounted() {
-      this.app = JSON.parse(this.$route.params.app)
-
-      this.application.name = this.app[0];
-      this.application.nickname = this.app[1];
-      this.application.src = require(`@/assets/img/icon/${this.application.name}.png`);
-      
-      this.application.isNickname = this.app[3];
-
-      this.nicknameInput = this.application.nickname;
+    this.application = this.app;
+    this.nicknameInput = this.application.nickname;
+    this.nickname = this.application.nickname;
+    this.isNickname = this.application.isNickname;
   },
 
   methods: {
       changeMode: function() {
-          this.application.isNickname = !this.application.isNickname;
+          this.isNickname = !this.isNickname;
       },
       modalOpen: function() {
           this.nicknameModalCheck = !this.nicknameModalCheck;
@@ -208,15 +222,27 @@ export default {
           this.nicknameModalCheck = false;
       },
       successModal : function() {
-          if (this.nicknameInput !== this.application.nickname) {
-              this.application.nickname = this.nicknameInput;
+          if (this.nicknameInput !== this.nickname) {
+              this.nickname = this.nicknameInput;
           }
           this.closeModal();
       },
       updateInput: function(e) {
           console.log(e.target.value)
           this.nicknameInput = e.target.value;
+      }, 
+      closeAppSettingModal: function() {
+        this.$emit("closeAppModal");
       }
+  },
+  watch: {
+    nickname: function() {
+      this.$emit("nicknameChanged", this.application.idx, this.nickname);
+
+    },
+    isNickname: function() {
+      this.$emit("modeChanged", this.application.idx, this.isNickname);
+    }
   }
 }
 </script>
@@ -240,7 +266,7 @@ box-sizing: border-box;
 }
 
 .app-detail-middle {
-  height: 650px;
+  height: 700px;
   width: 100%;
   overflow: scroll;
 }
@@ -342,7 +368,6 @@ box-sizing: border-box;
   font-weight: 400;
   font-size: 13px;
   color: #1896CC;
-
 }
 
 .app-option-subtitle-v2 {
@@ -353,7 +378,7 @@ box-sizing: border-box;
 .nickname-modal-wrap {
 position: absolute;
 left: calc(50% - 180px);
-top: calc(300px + 22px + 60px);
+top: 0;
 width: 360px;
 height: 723px;
 background: rgba(0,0,0,0.2);
@@ -421,6 +446,16 @@ background: #fff;
   font-weight: 700;
   font-size: 20px;
   width: 45%;
+}
+
+.bottombar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #F6F6F6;
 }
 
 </style>
