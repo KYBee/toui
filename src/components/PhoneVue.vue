@@ -288,7 +288,7 @@ export default {
   align-items: center; 
   border-radius: 20px;
   position:relative;
-  top: 160px;
+  top: 150px;
   z-index: 899;
   left: 20px;
 }
@@ -308,8 +308,9 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 700;
-  width: 12rem;
+  width: 260px;
   justify-content: center;
+  overflow:scroll;
 }
 
 .memo-right {
@@ -388,10 +389,12 @@ export default {
 .appName {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-size: .6rem;
   padding: .3rem;
   color: white;
+  width: 80px;
+  height: 40px;
 }
 
 </style>

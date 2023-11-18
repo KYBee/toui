@@ -151,7 +151,7 @@
                           사용자의 화면에서 이 별칭으로 표시됩니다.
                       </div>
                   </div>
-                  <input type="text" class="nickname-modal-input" v-bind:value="this.nicknameInput" v-on:input="updateInput">
+                  <input type="text" class="nickname-modal-input" maxlength="15" v-bind:value="this.nicknameInput" v-on:input="updateInput">
                   <div class="nickname-modal-button">
                       <div class="nickname-modal-cancel" style="cursor:pointer" @click="closeModal">취소</div>
                       <div class="nickname-modal-success" style="cursor:pointer" @click="successModal">완료</div>
