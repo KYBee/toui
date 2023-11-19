@@ -252,7 +252,7 @@ export default {
     margin: 0 auto;
 }
 .phone-background {
-  background: url('@/assets/phone-background4.png');
+  background: url('@/assets/background/phone-background4.png');
 }
 
 .phone-scroll-middle {

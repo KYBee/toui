@@ -16,6 +16,9 @@
             </div>
 
             <div class="modal-wrap-1" v-show="modalOneCheck" @click.self="closeModal">
+              <div class="modal-tri-1">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
               <div class="memoContainer">
                 <div class="memoName">
                   <div class="memo-middle" v-if="this.application1.isNickname===false">{{this.application1.nickname}}</div>
@@ -46,6 +49,9 @@
             </div>
             
             <div class="modal-wrap-2" v-show="modalTwoCheck" @click.self="closeModal">
+              <div class="modal-tri-2">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
               <div class="memoContainer">
                 <div class="memoName">
                   <div class="memo-middle" v-if="this.application2.isNickname===false">{{this.application2.nickname}}</div>
@@ -77,6 +83,9 @@
             </div>
             
             <div class="modal-wrap-3" v-show="modalThreeCheck" @click.self="closeModal">
+              <div class="modal-tri-3">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
               <div class="memoContainer">
                 <div class="memoName">
                   <div class="memo-middle" v-if="this.application3.isNickname===false">{{this.application3.nickname}}</div>
@@ -221,7 +230,7 @@ export default {
 }
 
 .phone-background {
-  background: url('@/assets/phone-background.png');
+  background: url('@/assets/background/phone-background.png');
 }
 
 .middle {
@@ -288,7 +297,7 @@ export default {
   align-items: center; 
   border-radius: 20px;
   position:relative;
-  top: 130px;
+  top: 108px;
   z-index: 899;
   left: 20px;
 }
@@ -400,4 +409,24 @@ export default {
   height: 40px;
 }
 
+.modal-tri-1 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: -124px;
+}
+
+.modal-tri-2 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: -44px;
+}
+
+.modal-tri-3 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: 36px;
+}
 </style>

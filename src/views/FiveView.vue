@@ -126,7 +126,7 @@ export default {
     margin: 0 auto;
 }
 .phone-background {
-  background: url('@/assets/phone-background5.png');
+  background: url('@/assets/background/phone-background5.png');
 }
 
 .content-middle {
