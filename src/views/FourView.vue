@@ -134,8 +134,6 @@ export default {
           }
         }
 
-        console.log(position);
-
         if (position.length > 1) {
           if (position[0][0] == position[1][0] && position[0][1] == position[1][1]) {
             position[1][1] = 2;

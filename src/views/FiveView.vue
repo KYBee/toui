@@ -2,7 +2,15 @@
   <div class="phoneContainer">
     <div class="phone-background">
       <PhoneTopBarVue />
-      <SearchBarVue />
+      <div class="phone searchbar">
+        <input class="search" type="text" placeholder="검색">
+        <font-awesome-icon class="top-item" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+      </div>
+
+      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
+        <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing"/>
+      </div>
+
       <div class="content-middle">
         <div class="appContainer">
           <div class="appLine" v-for="(appList, index) in application" :key="index">
@@ -18,20 +26,21 @@
 </template>
 
 <script>
-import PhoneTopBarVue from '@/components/PhoneTopBarVue.vue';
-import PhoneBottomBarVue from '@/components/PhoneBottomBarVue.vue';
-import SearchBarVue from '@/components/SearchBarVue.vue';
-import ApplicationVue from '@/components/ApplicationVue';
+import PhoneTopBarVue from '@/components/PhoneTopBarVueBlack.vue';
+import PhoneBottomBarVue from '@/components/PhoneBottomBarVueBlack.vue';
+import ApplicationVue from '@/components/ApplicationVueBlack';
+import SelectBoxView from '@/components/SelectBoxVueFive.vue';
 
 export default {
   components: {
     PhoneTopBarVue,
     PhoneBottomBarVue,
-    SearchBarVue,
     ApplicationVue,
+    SelectBoxView
   },
   data() {
     return {
+      selectBoxModalCheck: false,
       application: [],
       applications: [
         {idx: 0, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 0},
@@ -90,6 +99,23 @@ export default {
     }
 
     console.log(this.application);
+  },
+  methods: {
+    closeSelectBoxModal : function() {
+      this.selectBoxModalCheck = false;
+    },
+
+    openSelectBoxModal : function() {
+      this.selectBoxModalCheck = true;
+    },
+
+    appSorting: function() {
+      console.log("sorting selected");
+    },
+
+    appCategorizing: function() {
+      console.log("Categorizing");
+    }
   }
 }
 </script>
@@ -100,7 +126,7 @@ export default {
     margin: 0 auto;
 }
 .phone-background {
-  background: url('@/assets/phone-background.png');
+  background: url('@/assets/phone-background5.png');
 }
 
 .content-middle {
@@ -137,4 +163,40 @@ export default {
   width: 80px;
   height: 95px;
 }
+
+.searchbar {
+  height: 40px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  width:95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border: 0px;
+  opacity: 0.5;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.search {
+  height: 100%;
+  background: 0;
+  width: 90%;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.select-box-modal-wrap {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px);
+  width: 360px;
+  height: 723px;
+  z-index: 20;
+}
+
 </style>

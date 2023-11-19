@@ -70,11 +70,10 @@ export default {
   align-items: flex-start;
   font-size: .6rem;
   padding: .3rem;
-  color: white;
+  color: black;
   width: 60px;
   height: 40px;
   flex-wrap: wrap;
   font-weight: 500;
-
 }
 </style>

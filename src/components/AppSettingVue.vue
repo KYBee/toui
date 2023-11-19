@@ -228,7 +228,6 @@ export default {
           this.closeModal();
       },
       updateInput: function(e) {
-          console.log(e.target.value)
           this.nicknameInput = e.target.value;
       }, 
       closeAppSettingModal: function() {

@@ -23,7 +23,6 @@ export default {
   color: white;
   justify-content: space-evenly;
   align-items: center;
-  background: #F6F6F6;
 }
 
 </style>

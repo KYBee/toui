@@ -46,7 +46,6 @@ export default {
   display: flex;
   justify-content:space-between;
   align-items: center;
-  background: #F6F6F6;
 }
 
 .top-item {

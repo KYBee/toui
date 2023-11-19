@@ -1,16 +1,19 @@
 <template>
   <div class="selectBox">
-    <div class="selectItem">정렬</div>
+    <div class="selectItem" @click="appSorting">정렬</div>
+    <div class="selectItem" @click="appCategorizing">카테고리</div>
     <div class="selectItem">설정</div>
-    <div class="selectItem" @click="appSizing">앱 크기 키우기</div>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    appSizing: function() {
-      this.$emit("appSizing");
+    appSorting: function() {
+      this.$emit("appSorting");
+    },
+    appCategorizing: function() {
+      this.$emit("appCategorizing");
     }
   }
 }

@@ -34,10 +34,6 @@ export default {
     }
   },
 
-  created() {
-    console.log(this.application)
-  },
-
   methods: {
 
   },
@@ -80,5 +76,7 @@ export default {
   width: 120px;
   height: 80px;
   flex-wrap: wrap;
+  font-weight: 500;
+
 }
 </style>
