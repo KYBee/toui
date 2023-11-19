@@ -37,7 +37,7 @@
                               <div class="app-option-title">
                                   별칭모드 사용
                               </div>
-                              <div class="app-option-subtitle">
+                              <div class="app-option-subtitle-v2">
                                   화면에 별칭이 표시됩니다.
                               </div>
                           </div>
@@ -373,6 +373,7 @@ box-sizing: border-box;
 .app-option-subtitle-v2 {
   font-weight: 300;
   font-size: 13px;
+  color: black;
 }
 
 .nickname-modal-wrap {

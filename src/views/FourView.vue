@@ -1,24 +1,48 @@
 <template>
   <div class="phoneContainer">
     <div class="phone-background">
-      <PhoneTopBarVue />
-      <div class="phone searchbar">
-        <input class="search" type="text" placeholder="검색">
-        <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+      <div v-if="appSizeModalCheck===false">      
+        <PhoneTopBarVue />
+        <div class="phone searchbar">
+          <input class="search" type="text" placeholder="검색">
+          <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" @click="openAppSizeModal" />
+        </div>
       </div>
-    
-      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
-        <SelectBoxView />
+      <div v-if="appSizeModalCheck===true">
+        <div class="emptybar"></div>
       </div>
 
-      <div class="phone-scroll-middle">
+    
+      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
+        <SelectBoxView @appSizing="appSizing"/>
+      </div>
+      <div class="app-size-modal-wrap" v-show="appSizeModalCheck" @click.self="closeAppSizeModal">
+        <div class="sizing-box">
+          <div class="sizing-icon">
+            <img src="@/assets/appsizing.svg" alt="">
+          </div>
+          <div class="sizing-title">크기조절</div>
+        </div>
         <div class="content-middle">
           <div class="appContainer" v-for="(appPage, index) in application" :key="index">
             <div class="appLine" v-for="(appList, index) in appPage" :key="index">
               <div class="appItem" v-for="(app, i) in appList" :key="i">
+                <input type="checkbox" class="appsize-checkbox">
+                <label for=""></label>
                 <ApplicationVue v-if="app.bigSize !== true" v-bind:application="app" />
                 <ApplicationBigVue v-if="app.bigSize === true" v-bind:application="app" />
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-scroll-middle">
+        <div class="appContainer" v-for="(appPage, index) in application" :key="index">
+          <div class="appLine" v-for="(appList, index) in appPage" :key="index">
+            <div class="appItem" v-for="(app, i) in appList" :key="i">
+              <ApplicationVue v-if="app.bigSize !== true" v-bind:application="app" />
+              <ApplicationBigVue v-if="app.bigSize === true" v-bind:application="app" />
             </div>
           </div>
         </div>
@@ -47,15 +71,14 @@ export default {
   data() {
     return {
       selectBoxModalCheck: false,
+      appSizeModalCheck: true,
       application:[
         [],
-        []
       ],
       empty: {idx: 1000, name: " ", src: require("@/assets/img/icon/empty.png"), function: 1, color: 2, company: 3, numCnt: 0},
       applications: [
         {idx: 0, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 1, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 2, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 3, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 4, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 5, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
@@ -66,27 +89,12 @@ export default {
         {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 12, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 11, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 13, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 18, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 19, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 27, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
       ]
     }
   },
@@ -116,7 +124,20 @@ export default {
 
     openSelectBoxModal : function() {
       this.selectBoxModalCheck = true;
-    }
+    },
+
+    appSizing: function() {
+
+      console.log("appSizing");
+    },
+
+    openAppSizeModal: function() {
+      this.appSizeModalCheck = true;
+    },
+
+    closeAppSizeModal : function() {
+      this.appSizeModalCheck = false;
+    },
   }
 }
 </script>
@@ -132,33 +153,31 @@ export default {
 
 .phone-scroll-middle {
   height: 620px;
-  overflow: scroll;
 }
-
-.content-middle {
-  height: 580px;
-  width: 720px;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 10px;
-}
-
 
 .appContainer {
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
   width: 360px;
   height: 580px;
-  right: 0;
+}
+
+.content-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  width: 360px;
 }
 
 .appLine {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
   
 }
 
@@ -204,6 +223,39 @@ export default {
   width: 360px;
   height: 723px;
   z-index: 20;
+}
+
+.app-size-modal-wrap {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px);
+  width: 360px;
+  height: 723px;
+  z-index: 20;
+}
+
+.emptybar{
+  width: 100%;
+  height: 70px;
+}
+
+.sizing-box {
+  width: 90%;
+  margin: 0 auto;
+  background: rgba(217, 217, 217, 0.3);
+  border-radius: 20px;
+  height: 60px;
+  margin: 10px auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sizing-title {
+  color: white;
+  font-size: .8rem;
 }
 
 </style>

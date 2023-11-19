@@ -2,13 +2,17 @@
   <div class="selectBox">
     <div class="selectItem">정렬</div>
     <div class="selectItem">설정</div>
-    <div class="selectItem">앱 크기 키우기</div>
+    <div class="selectItem" @click="appSizing">앱 크기 키우기</div>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    appSizing: function() {
+      this.$emit("appSizing");
+    }
+  }
 }
 </script>
 
