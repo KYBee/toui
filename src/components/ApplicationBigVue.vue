@@ -57,13 +57,13 @@ export default {
   width: 140px;
   height: 150px;
   border: 0px;
-  border-radius: 25px;
+  border-radius: 50px;
 }
 
 .appIcon {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 50px;
 }
 
 .appName {

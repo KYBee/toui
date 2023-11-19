@@ -5,7 +5,7 @@
         <PhoneTopBarVue />
         <div class="phone searchbar">
           <input class="search" type="text" placeholder="검색">
-          <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+          <font-awesome-icon class="top-item" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
         </div>
       </div>
       <div v-if="appSizeModalCheck===true">
@@ -88,13 +88,13 @@ export default {
         {idx: 2, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 3, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 4, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 5, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 5, name: "삼성증권", src: require("@/assets/img/icon/삼성증권.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 6, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 7, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 8, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 9, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 10, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 11, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 8, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 9, name: "Knox Meeting", src: require("@/assets/img/icon/Knox Meeting.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 11, name: "인터넷", src: require("@/assets/img/icon/인터넷.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 12, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 13, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 14, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
