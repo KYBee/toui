@@ -1,10 +1,6 @@
 <template>
   <footer>
     <a href="https://github.com/KYBee/toui"><h2>&copy; team 모도모도</h2></a>
-    <br />
-    <a href="https://github.com/KYBee/toui"
-      ><img src="@/assets/github.png" alt="github"
-    /></a>
   </footer>
 </template>
 
@@ -16,7 +12,7 @@ export default {
 
 <style scoped>
 footer {
-  height: 250px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;

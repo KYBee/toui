@@ -254,7 +254,7 @@ export default {
     margin: 0 auto;
 }
 .phone-background {
-  background: url('@/assets/phone-background.png');
+  background: url('@/assets/phone-background4.png');
 }
 
 .phone-scroll-middle {
@@ -262,28 +262,30 @@ export default {
 }
 
 .appContainer {
-  padding: 20px;
+  margin: 0 auto;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
-  width: 360px;
+  width: 320px;
   height: 580px;
 }
 
 .content-middle {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
-  width: 360px;
+  width: 320px;
 }
 
 .appLine {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 320px;
   
 }
 
