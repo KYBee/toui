@@ -371,7 +371,7 @@ box-sizing: border-box;
 }
 
 .app-option-subtitle-v2 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 13px;
   color: black;
 }
@@ -414,7 +414,7 @@ background: #fff;
 }
 
 .nickname-modal-subtitle {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   text-align: left;
   width: 90%;
