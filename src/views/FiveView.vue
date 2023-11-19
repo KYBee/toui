@@ -8,7 +8,7 @@
       </div>
 
       <div class="select-box-modal-wrap5" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
-        <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing"/>
+        <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing" :numberCnt="numberCnt"/>
       </div>
 
       <div class="content-middle5">
@@ -40,6 +40,7 @@ export default {
   },
   data() {
     return {
+      numberCnt: 0,
       selectBoxModalCheck: false,
       application: [],
       applications: [
@@ -106,21 +107,24 @@ export default {
     },
 
     openSelectBoxModal : function() {
+      this.numberCnt += 1;
       this.selectBoxModalCheck = true;
     },
 
-    appSorting: function() {
-      console.log("sorting selected");
+    appSorting: function(value) {
+      console.log("sorting selected "+ value);
+      this.selectBoxModalCheck = false;
     },
 
-    appCategorizing: function() {
-      console.log("Categorizing");
+    appCategorizing: function(value) {
+      console.log("Categorizing " + value);
+      this.selectBoxModalCheck = false;
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .phoneContainer5 {
     width: 360px;
     margin: 0 auto;
