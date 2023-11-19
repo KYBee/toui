@@ -52,7 +52,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 5;
   position: relative;
   top: 45px;
   left: 40px;
