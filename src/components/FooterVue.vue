@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <a href="https://github.com/KYBee/toui"><h2>&copy; team 모도모도</h2></a>
+    <h2>&copy; team 모도모도</h2>
   </footer>
 </template>
 
