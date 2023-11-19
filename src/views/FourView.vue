@@ -1,36 +1,36 @@
 <template>
-  <div class="phoneContainer">
-    <div class="phone-background">
+  <div class="phoneContainer4">
+    <div class="phone-background4">
       <div v-if="appSizeModalCheck===false">      
         <PhoneTopBarVue />
-        <div class="phone searchbar">
-          <input class="search" type="text" placeholder="검색">
-          <font-awesome-icon class="top-item" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+        <div class="phone searchbar4">
+          <input class="search4" type="text" placeholder="검색">
+          <font-awesome-icon class="top-item4" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
         </div>
       </div>
       <div v-if="appSizeModalCheck===true">
-        <div class="emptybar"></div>
+        <div class="emptybar4"></div>
       </div>
 
     
-      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
+      <div class="select-box-modal-wrap4" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
         <SelectBoxView @appSizing="appSizing"/>
       </div>
-      <div class="app-size-modal-wrap" v-show="appSizeModalCheck" @click.self="closeAppSizeModal">
-        <div @click="appSizingSelect" class="sizing-box">
-          <div class="sizing-icon">
+      <div class="app-size-modal-wrap4" v-show="appSizeModalCheck" @click.self="closeAppSizeModal">
+        <div @click="appSizingSelect" class="sizing-box4">
+          <div class="sizing-icon4">
             <img src="@/assets/appsizing.svg" alt="">
           </div>
-          <div  class="sizing-title">크기조절</div>
+          <div  class="sizing-title4">크기조절</div>
         </div>
-        <div class="content-middle">
-          <div class="appContainer" v-for="(appPage, index) in application" :key="index">
-            <div class="appLine" v-for="(appList, index) in appPage" :key="index">
-              <div class="appItem" style="position:relative" v-for="(app, i) in appList" :key="i">
-                <input v-if="app.numCnt === 0" type="checkbox" :id="app.idx" class="appsize-checkbox">
-                <label v-if="app.bigSize !== true && app.numCnt === 0" class="smallApp" :for="app.idx">
+        <div class="content-middle4">
+          <div class="appContainer4" v-for="(appPage, index) in application" :key="index">
+            <div class="appLine4" v-for="(appList, index) in appPage" :key="index">
+              <div class="appItem4" style="position:relative" v-for="(app, i) in appList" :key="i">
+                <input v-if="app.numCnt === 0" type="checkbox" :id="app.idx" class="appsize-checkbox4">
+                <label v-if="app.bigSize !== true && app.numCnt === 0" class="smallApp4" :for="app.idx">
                 </label>
-                <label v-if="app.bigSize === true && app.numCnt === 0" class="bigApp" :for="app.idx">
+                <label v-if="app.bigSize === true && app.numCnt === 0" class="bigApp4" :for="app.idx">
                 </label>
                 <ApplicationVue v-if="app.bigSize !== true" v-bind:application="app" />
                 <ApplicationBigVue v-if="app.bigSize === true" v-bind:application="app" />
@@ -40,10 +40,10 @@
         </div>
       </div>
 
-      <div class="phone-scroll-middle">
-        <div class="appContainer" v-for="(appPage, index) in application" :key="index">
-          <div class="appLine" v-for="(appList, index) in appPage" :key="index">
-            <div class="appItem" v-for="(app, i) in appList" :key="i">
+      <div class="phone-scroll-middle4">
+        <div class="appContainer4" v-for="(appPage, index) in application" :key="index">
+          <div class="appLine4" v-for="(appList, index) in appPage" :key="index">
+            <div class="appItem4" v-for="(app, i) in appList" :key="i">
               <ApplicationVue v-if="app.bigSize !== true" v-bind:application="app" />
               <ApplicationBigVue v-if="app.bigSize === true" v-bind:application="app" />
             </div>
@@ -246,20 +246,20 @@ export default {
 }
 </script>
 
-<style>
-.phoneContainer {
+<style scoped>
+.phoneContainer4 {
     width: 360px;
     margin: 0 auto;
 }
-.phone-background {
+.phone-background4 {
   background: url('@/assets/background/phone-background4.png');
 }
 
-.phone-scroll-middle {
+.phone-scroll-middle4 {
   height: 620px;
 }
 
-.appContainer {
+.appContainer4 {
   margin: 0 auto;
   padding-top: 20px;
   display: flex;
@@ -270,7 +270,7 @@ export default {
   height: 580px;
 }
 
-.content-middle {
+.content-middle4 {
   display: flex;
   margin: 0 auto;
   flex-direction: column;
@@ -279,7 +279,7 @@ export default {
   width: 320px;
 }
 
-.appLine {
+.appLine4 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -287,7 +287,7 @@ export default {
   
 }
 
-.appItem {
+.appItem4 {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -296,7 +296,7 @@ export default {
 }
 
 
-.searchbar {
+.searchbar4 {
   box-sizing: border-box;
 
   height: 40px;
@@ -312,7 +312,7 @@ export default {
   margin: 0 auto;
 }
 
-.search {
+.search4 {
   height: 100%;
   background: 0;
   width: 90%;
@@ -322,7 +322,7 @@ export default {
   align-items: center;
 }
 
-.select-box-modal-wrap {
+.select-box-modal-wrap4 {
   position: absolute;
   left: calc(50% - 180px);
   top: calc(300px);
@@ -331,7 +331,7 @@ export default {
   z-index: 20;
 }
 
-.app-size-modal-wrap {
+.app-size-modal-wrap4 {
   position: absolute;
   left: calc(50% - 180px);
   top: calc(300px);
@@ -341,12 +341,12 @@ export default {
   background: rgba(0, 0, 0, 0.2)
 }
 
-.emptybar{
+.emptybar4 {
   width: 100%;
   height: 70px;
 }
 
-.sizing-box {
+.sizing-box4 {
   width: 90%;
   margin: 0 auto;
   background: rgba(217, 217, 217, 0.3);
@@ -360,16 +360,16 @@ export default {
   cursor: pointer;
 }
 
-.sizing-title {
+.sizing-title4 {
   color: white;
   font-size: .8rem;
 }
 
-.appsize-checkbox {
+.appsize-checkbox4 {
   display:none;
 }
 
-.appsize-checkbox + .smallApp {
+.appsize-checkbox4 + .smallApp4 {
   top:0px;
   left: 7px;
   position: absolute;
@@ -381,7 +381,7 @@ export default {
   z-index: 10;
 }
 
-.appsize-checkbox:checked + .smallApp{
+.appsize-checkbox4:checked + .smallApp4 {
   top:0px;
   left: 7px;
   position: absolute;
@@ -393,7 +393,7 @@ export default {
   z-index: 10;
 }
 
-.appsize-checkbox + .bigApp {
+.appsize-checkbox4 + .bigApp4 {
   top:0px;
   left: 7px;
   position: absolute;
@@ -405,7 +405,7 @@ export default {
   z-index: 10;
 }
 
-.appsize-checkbox:checked + .bigApp{
+.appsize-checkbox4:checked + .bigApp4 {
   top:0px;
   left: 7px;
   position: absolute;

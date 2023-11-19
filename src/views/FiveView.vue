@@ -1,20 +1,20 @@
 <template>
-  <div class="phoneContainer">
-    <div class="phone-background">
+  <div class="phoneContainer5">
+    <div class="phone-background5">
       <PhoneTopBarVue />
-      <div class="phone searchbar">
-        <input class="search" type="text" placeholder="검색">
-        <font-awesome-icon class="top-item" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+      <div class="phone searchbar5">
+        <input class="search5" type="text" placeholder="검색">
+        <font-awesome-icon class="top-item5" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
       </div>
 
-      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
+      <div class="select-box-modal-wrap5" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
         <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing"/>
       </div>
 
-      <div class="content-middle">
-        <div class="appContainer">
-          <div class="appLine" v-for="(appList, index) in application" :key="index">
-            <div class="appItem" v-for="(app, i) in appList" :key="i">
+      <div class="content-middle5">
+        <div class="appContainer5">
+          <div class="appLine5" v-for="(appList, index) in application" :key="index">
+            <div class="appItem5" v-for="(app, i) in appList" :key="i">
               <ApplicationVue v-bind:application="app" />
             </div>
           </div>
@@ -121,22 +121,22 @@ export default {
 </script>
 
 <style>
-.phoneContainer {
+.phoneContainer5 {
     width: 360px;
     margin: 0 auto;
 }
-.phone-background {
+.phone-background5 {
   background: url('@/assets/background/phone-background5.png');
 }
 
-.content-middle {
+.content-middle5 {
   height: 600px;
   overflow: scroll;
   padding-top: 10px;
 }
 
 
-.appContainer {
+.appContainer5 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -149,14 +149,14 @@ export default {
   right: 0;
 }
 
-.appLine {
+.appLine5 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   
 }
 
-.appItem {
+.appItem5 {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -164,7 +164,7 @@ export default {
   height: 95px;
 }
 
-.searchbar {
+.searchbar5 {
   height: 40px;
   background: #D9D9D9;
   border-radius: 20px;
@@ -179,7 +179,7 @@ export default {
   box-sizing: border-box;
 }
 
-.search {
+.search5 {
   height: 100%;
   background: 0;
   width: 90%;
@@ -190,7 +190,7 @@ export default {
 }
 
 
-.select-box-modal-wrap {
+.select-box-modal-wrap5 {
   position: absolute;
   left: calc(50% - 180px);
   top: calc(300px);
