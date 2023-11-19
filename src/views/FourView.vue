@@ -2,12 +2,23 @@
   <div class="phoneContainer">
     <div class="phone-background">
       <PhoneTopBarVue />
-      <SearchBarVue />
-      <div class="content-middle">
-        <div class="appContainer">
-          <div class="appLine" v-for="(appList, index) in application" :key="index">
-            <div class="appItem" v-for="(app, i) in appList" :key="i">
-              <ApplicationVue v-bind:application="app" />
+      <div class="phone searchbar">
+        <input class="search" type="text" placeholder="검색">
+        <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+      </div>
+    
+      <div class="select-box-modal-wrap" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
+        <SelectBoxView />
+      </div>
+
+      <div class="phone-scroll-middle">
+        <div class="content-middle">
+          <div class="appContainer" v-for="(appPage, index) in application" :key="index">
+            <div class="appLine" v-for="(appList, index) in appPage" :key="index">
+              <div class="appItem" v-for="(app, i) in appList" :key="i">
+                <ApplicationVue v-if="app.bigSize !== true" v-bind:application="app" />
+                <ApplicationBigVue v-if="app.bigSize === true" v-bind:application="app" />
+              </div>
             </div>
           </div>
         </div>
@@ -15,81 +26,97 @@
       <PhoneBottomBarVue /> 
     </div>
   </div>
+
 </template>
 
 <script>
 import PhoneTopBarVue from '@/components/PhoneTopBarVue.vue';
 import PhoneBottomBarVue from '@/components/PhoneBottomBarVue.vue';
-import SearchBarVue from '@/components/SearchBarVue.vue';
 import ApplicationVue from '@/components/ApplicationVue';
+import ApplicationBigVue from '@/components/ApplicationBigVue';
+import SelectBoxView from "@/components/SelectBoxVue.vue";
 
 export default {
   components: {
     PhoneTopBarVue,
     PhoneBottomBarVue,
-    SearchBarVue,
     ApplicationVue,
+    ApplicationBigVue,
+    SelectBoxView,
   },
   data() {
     return {
-      application: [],
+      selectBoxModalCheck: false,
+      application:[
+        [],
+        []
+      ],
+      empty: {idx: 1000, name: " ", src: require("@/assets/img/icon/empty.png"), function: 1, color: 2, company: 3, numCnt: 0},
       applications: [
-        {idx: 0, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 1, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 2, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 3, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 4, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 5, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 6, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 7, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 8, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 9, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 11, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 12, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 13, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 16, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 18, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 19, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 22, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 27, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 1, color: 2, company: 3, numCnt: 0},
-
+        {idx: 0, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 1, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 2, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 3, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 4, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 5, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 6, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 7, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 8, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 9, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 12, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 11, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 13, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 18, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 19, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 27, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
       ]
     }
   },
   created() {
+    let page = 0;
     let index = -1;
+    
     for (let i = 0; i < this.applications.length; i++) {
-      if (i % 4 == 0) {
+      if (i % 4 === 0) {
         index += 1;
-        this.application.push([]);
+        
+        if (index === 6) {
+          page += 1;
+          index = 0;
+        }
+        
+        this.application[page].push([]);
       }
-      
-      this.application[index].push(this.applications[i]);
-    }
 
-    console.log(this.application);
+      this.application[page][index].push(this.applications[i]);
+    }
+  },
+  methods: {
+    closeSelectBoxModal : function() {
+      this.selectBoxModalCheck = false;
+    },
+
+    openSelectBoxModal : function() {
+      this.selectBoxModalCheck = true;
+    }
   }
 }
 </script>
@@ -103,23 +130,29 @@ export default {
   background: url('@/assets/phone-background.png');
 }
 
-.content-middle {
-  height: 600px;
+.phone-scroll-middle {
+  height: 620px;
   overflow: scroll;
+}
+
+.content-middle {
+  height: 580px;
+  width: 720px;
+  display: flex;
+  justify-content: space-around;
   padding-top: 10px;
 }
 
 
 .appContainer {
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: space-around;
-  margin: .8rem 10px;
-  width: 680px;
-  height: 570px;
-  flex-wrap: wrap;
-  overflow: scroll;
+  align-content: center;
+  width: 360px;
+  height: 580px;
+  right: 0;
 }
 
 .appLine {
@@ -136,4 +169,41 @@ export default {
   width: 80px;
   height: 95px;
 }
+
+
+.searchbar {
+  box-sizing: border-box;
+
+  height: 40px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  width:95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border: 0px;
+  opacity: 0.5;
+  margin: 0 auto;
+}
+
+.search {
+  height: 100%;
+  background: 0;
+  width: 90%;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-box-modal-wrap {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px);
+  width: 360px;
+  height: 723px;
+  z-index: 20;
+}
+
 </style>

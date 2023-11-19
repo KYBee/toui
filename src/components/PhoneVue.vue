@@ -352,7 +352,7 @@ export default {
 }
 
 .appContainerOne {
-  padding: 16px 10px;
+  padding: 16px 16px;
 }
 
 .app-setting-modal {
