@@ -7,6 +7,142 @@
         <div class="appLine">
           <div class="appItem">
 
+            <div class="appTotalContainerOne"  @click="modalOpen(4)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application4.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application4.isNickname===false">{{ this.application4.name }}</div>
+              <div class="appName" v-if="this.application4.isNickname===true">{{ this.application4.nickname }}</div>
+            </div>
+
+            <div class="modal-wrap-4" v-show="modalFourCheck" @click.self="closeModal">
+              <div class="modal-tri-4">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
+              <div class="memoContainer">
+                <div class="memoName">
+                  <div class="memo-middle" v-if="this.application4.isNickname===false">{{this.application4.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application4.isNickname===true">{{this.application4.name}}</div>
+                  <div class="memo-right">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(4)">
+                  </div>
+                </div>
+                <div class="memoOption">
+                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
+                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
+                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
+                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="appItem">
+            
+            <div class="appTotalContainerOne"  @click="modalOpen(5)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application5.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application5.isNickname===false">{{ this.application5.name }}</div>
+              <div class="appName" v-if="this.application5.isNickname===true">{{ this.application5.nickname }}</div>
+            </div>
+            
+            <div class="modal-wrap-5" v-show="modalFiveCheck" @click.self="closeModal">
+              <div class="modal-tri-5">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
+              <div class="memoContainer">
+                <div class="memoName">
+                  <div class="memo-middle" v-if="this.application5.isNickname===false">{{this.application5.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application5.isNickname===true">{{this.application5.name}}</div>
+
+                  <div class="memo-right">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(5)">
+                  </div>
+                </div>
+                <div class="memoOption">
+                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
+                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
+                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
+                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="appItem">
+            
+            <div class="appTotalContainerOne"  @click="modalOpen(6)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application6.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application6.isNickname===false">{{ this.application6.name }}</div>
+              <div class="appName" v-if="this.application6.isNickname===true">{{ this.application6.nickname }}</div>
+            </div>
+            
+            <div class="modal-wrap-6" v-show="modalSixCheck" @click.self="closeModal">
+              <div class="modal-tri-6">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
+              <div class="memoContainer">
+                <div class="memoName">
+                  <div class="memo-middle" v-if="this.application6.isNickname===false">{{this.application6.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application6.isNickname===true">{{this.application6.name}}</div>
+
+                  <div class="memo-right">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(6)">
+                  </div>
+                </div>
+                <div class="memoOption">
+                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
+                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
+                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
+                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="appItem">
+            
+            <div class="appTotalContainerOne"  @click="modalOpen(7)">
+              <div class="appIconContainer">
+                <img class="appIcon" :src="this.application7.src" alt="">
+              </div>
+              <div class="appName" v-if="this.application7.isNickname===false">{{ this.application7.name }}</div>
+              <div class="appName" v-if="this.application7.isNickname===true">{{ this.application7.nickname }}</div>
+            </div>
+            
+            <div class="modal-wrap-7" v-show="modalSevenCheck" @click.self="closeModal">
+              <div class="modal-tri-7">
+                <img src="@/assets/toggleTriangle.svg" alt="" />
+              </div>
+              <div class="memoContainer">
+                <div class="memoName">
+                  <div class="memo-middle" v-if="this.application7.isNickname===false">{{this.application7.nickname}}</div>
+                  <div class="memo-middle" v-if="this.application7.isNickname===true">{{this.application7.name}}</div>
+
+                  <div class="memo-right">
+                    <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(7)">
+                  </div>
+                </div>
+                <div class="memoOption">
+                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
+                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
+                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
+                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="appLine">
+          <div class="appItem">
+
             <div class="appTotalContainerOne"  @click="modalOpen(1)">
               <div class="appIconContainer">
                 <img class="appIcon" :src="this.application1.src" alt="">
@@ -24,7 +160,6 @@
                   <div class="memo-middle" v-if="this.application1.isNickname===false">{{this.application1.nickname}}</div>
                   <div class="memo-middle" v-if="this.application1.isNickname===true">{{this.application1.name}}</div>
                   <div class="memo-right">
-                    <img src="@/assets/editIcon.svg" alt="" @click="changeName">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(1)">
                   </div>
                 </div>
@@ -58,7 +193,6 @@
                   <div class="memo-middle" v-if="this.application2.isNickname===true">{{this.application2.name}}</div>
 
                   <div class="memo-right">
-                    <img src="@/assets/editIcon.svg" alt="" @click="changeName">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(2)">
                   </div>
                 </div>
@@ -92,7 +226,6 @@
                   <div class="memo-middle" v-if="this.application3.isNickname===true">{{this.application3.name}}</div>
 
                   <div class="memo-right">
-                    <img src="@/assets/editIcon.svg" alt="" @click="changeName">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(3)">
                   </div>
                 </div>
@@ -109,6 +242,19 @@
       </div>
     </div>
     <PhoneBottomBarVue />
+    <div class="app-setting-modal" v-show="appSettingModal4">
+      <AppSettingVue :app="this.application4" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+    <div class="app-setting-modal" v-show="appSettingModal5">
+      <AppSettingVue :app="this.application5" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+    <div class="app-setting-modal" v-show="appSettingModal6">
+      <AppSettingVue :app="this.application6" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+    <div class="app-setting-modal" v-show="appSettingModal7">
+      <AppSettingVue :app="this.application7" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+    </div>
+
     <div class="app-setting-modal" v-show="appSettingModal1">
       <AppSettingVue :app="this.application1" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
     </div>
@@ -134,10 +280,20 @@ export default {
       modalOneCheck: false,
       modalTwoCheck: false,
       modalThreeCheck: false,
+      modalFourCheck: false,
+      modalFiveCheck: false,
+      modalSixCheck: false,
+      modalSevenCheck: false,
+
       activeModal: 0,
       appSettingModal1: false,
       appSettingModal2: false,
       appSettingModal3: false,
+      appSettingModal4: false,
+      appSettingModal5: false,
+      appSettingModal6: false,
+      appSettingModal7: false,
+
       app:{},
     }
   },
@@ -151,6 +307,11 @@ export default {
   },
 
   created() {
+    this.application4 = {idx: 4, name: "Gmail", nickname: "Gmail", src: require("@/assets/img/icon/Gmail.png"), isNickname: false};
+    this.application5 = {idx: 5, name: "Chrome", nickname: "Chrome", src: require("@/assets/img/icon/Chrome.png"), isNickname: false};
+    this.application6 = {idx: 6, name: "Meet", nickname: "Meet", src: require("@/assets/img/icon/Meet.png"), isNickname: false};
+    this.application7 = {idx: 7, name: "Google", nickname: "Google", src: require("@/assets/img/icon/Google.png"), isNickname: false};
+
     this.application1 = {idx: 1, name: "이마트에브리데이", nickname: "이마트에브리데이", src: require("@/assets/img/icon/이마트에브리데이.png"), isNickname: false};
     this.application2 = {idx: 2, name: "이마트", nickname: "이마트", src: require("@/assets/img/icon/이마트.png"), isNickname: false};
     this.application3 = {idx: 3, name: "이마트몰", nickname: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), isNickname: false};
@@ -162,7 +323,7 @@ export default {
       console.log(idx);
     },
     modalOpen: function(value) {
-      if (this.modalOneCheck || this.modalTwoCheck || this.modalThreeCheck) {
+      if (this.modalOneCheck || this.modalTwoCheck || this.modalThreeCheck || this.modalFourCheck || this.modalFiveCheck || this.modalSixCheck || this.modalSevenCheck) {
         this.closeModal();
         return;
       }
@@ -173,23 +334,51 @@ export default {
       } else if (value === 2) {
         this.modalTwoCheck = !this.modalTwoCheck;
         this.activeModal = 2;
-      } else {
+      } else if (value === 3) {
         this.modalThreeCheck = !this.modalThreeCheck;
         this.activeModal = 3;
-      }
+      } else if (value === 4) {
+        this.modalFourCheck = !this.modalFourCheck;
+        this.activeModal = 4;
+      } else if (value === 5) {
+        this.modalFiveCheck = !this.modalFiveCheck;
+        this.activeModal = 5;
+      } else if (value === 6) {
+        this.modalSixCheck = !this.modalSixCheck;
+        this.activeModal = 6;
+      } else if (value === 7) {
+        this.modalSevenCheck = !this.modalSevenCheck;
+        this.activeModal = 7;
+      } 
+
+      
     },
     closeModal : function() {
       this.modalOneCheck = false;
       this.modalTwoCheck = false;
       this.modalThreeCheck = false;
+      this.modalFourCheck = false;
+      this.modalFiveCheck = false;
+      this.modalSixCheck = false;
+      this.modalSevenCheck = false;
     },
     closeAppSettingModal: function() {
       this.appSettingModal1 = false; 
       this.appSettingModal2 = false; 
-      this.appSettingModal3 = false; 
+      this.appSettingModal3 = false;
+      this.appSettingModal4 = false;
+      this.appSettingModal5 = false;
+      this.appSettingModal6 = false;
+      this.appSettingModal7 = false;
+
       this.modalOneCheck = false;
       this.modalTwoCheck = false;
       this.modalThreeCheck = false;
+      this.modalFourCheck = false;
+      this.modalFiveCheck = false;
+      this.modalSixCheck = false;
+      this.modalSevenCheck = false;
+
     },
     openAppSettingModal: function(value) {
 
@@ -197,8 +386,16 @@ export default {
         this.appSettingModal1 = true;
       } else if (value === 2) {
         this.appSettingModal2 = true;
-      } else {
+      } else if (value === 3) {
         this.appSettingModal3 = true;
+      } else if (value === 4) {
+        this.appSettingModal4 = true;
+      } else if (value === 5) {
+        this.appSettingModal5 = true;
+      } else if (value === 6) {
+        this.appSettingModal6 = true;
+      } else if (value === 7) {
+        this.appSettingModal7 = true;
       }
     },
     nicknameChanged: function(value, nickname) {
@@ -206,18 +403,33 @@ export default {
         this.application1.nickname = nickname;
       } else if (value === 2) {
         this.application2.nickname = nickname;
-      } else {
+      } else if (value === 3) {
         this.application3.nickname = nickname;
-      }
+      } else if (value === 4) {
+        this.application4.nickname = nickname;
+      } else if (value === 5) {
+        this.application5.nickname = nickname;
+      } else if (value === 6) {
+        this.application6.nickname = nickname;
+      } else if (value === 7) {
+        this.application7.nickname = nickname;
+      } 
     },
     modeChanged: function(value, isNickname) {
       if (value === 1) {
         this.application1.isNickname = isNickname;
       } else if (value === 2) {
         this.application2.isNickname = isNickname;
-
-      } else {
+      } else if (value === 3) {
         this.application3.isNickname = isNickname;
+      } else if (value === 4) {
+        this.application4.isNickname = isNickname;
+      } else if (value === 5) {
+        this.application5.isNickname = isNickname;
+      } else if (value === 6) {
+        this.application6.isNickname = isNickname;
+      } else {
+        this.application7.isNickname = isNickname;
       }
     }
   }
@@ -264,24 +476,57 @@ export default {
 .modal-wrap-1 {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px);
+  top: calc(300px + 22px + 95px);
   width: 360px;
   height: 723px;
 }
 .modal-wrap-2 {
   position: absolute;
   left: calc(50% - 180px);
-  top: calc(300px + 22px);
+  top: calc(300px + 22px + 95px);
   width: 360px;
   height: 723px;
 }
 .modal-wrap-3 {
   position: absolute;
   left: calc(50% - 180px);
+  top: calc(300px + 22px + 95px);
+  width: 360px;
+  height: 723px;
+}
+
+.modal-wrap-4 {
+  position: absolute;
+  left: calc(50% - 180px);
   top: calc(300px + 22px);
   width: 360px;
   height: 723px;
 }
+
+.modal-wrap-5 {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px + 22px);
+  width: 360px;
+  height: 723px;
+}
+
+.modal-wrap-6 {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px + 22px);
+  width: 360px;
+  height: 723px;
+}
+
+.modal-wrap-7 {
+  position: absolute;
+  left: calc(50% - 135px);
+  top: calc(300px + 22px);
+  width: 360px;
+  height: 723px;
+}
+
 /* modal or popup */
 .modal-container {
   transform: translate(-50%, -50%);
@@ -326,7 +571,7 @@ export default {
   width: 2.5rem;
   height: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-right: 1rem;
 }
@@ -414,6 +659,7 @@ export default {
   width: 20px;
   top: 119px;
   left: -124px;
+  z-index: 10;
 }
 
 .modal-tri-2 img {
@@ -421,6 +667,8 @@ export default {
   width: 20px;
   top: 119px;
   left: -44px;
+  z-index: 10;
+
 }
 
 .modal-tri-3 img {
@@ -428,5 +676,37 @@ export default {
   width: 20px;
   top: 119px;
   left: 36px;
+  z-index: 10;
+
 }
+
+.modal-tri-4 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: -124px;
+}
+
+.modal-tri-5 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: -44px;
+}
+
+.modal-tri-6 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: 36px;
+}
+
+.modal-tri-7 img {
+  position: relative;
+  width: 20px;
+  top: 119px;
+  left: 70px;
+}
+
+
 </style>
