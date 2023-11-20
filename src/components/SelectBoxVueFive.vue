@@ -5,16 +5,31 @@
     <div class="selectItem">설정</div>
   </div>
   <div class="selectBox dark" v-show="sortingOptionCheck">
-    <div class="selectItem" @click="appSorting(0)">직접 설정</div>
-    <div class="selectItem" @click="appSorting(1)">가나다 순</div>
-    <div class="selectItem" @click="appSorting(2)">설치 순</div>
-    <div class="selectItem" @click="appSorting(3)">빈도 순</div>
+    <div class="selectItem" v-if="sortingOp === 0" style="color: darkblue;" @click="appSorting(0)">직접 설정&nbsp;<font-awesome-icon :icon="['fas', 'check']" /> </div>
+    <div class="selectItem" v-else @click="appSorting(0)">직접 설정</div>
+
+    <div class="selectItem" v-if="sortingOp === 1" style="color: darkblue;" @click="appSorting(1)">가나다 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appSorting(1)">가나다 순</div>
+
+    <div class="selectItem" v-if="sortingOp === 2" style="color: darkblue;" @click="appSorting(2)">설치 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appSorting(2)">설치 순</div>
+
+    <div class="selectItem" v-if="sortingOp === 3" style="color: darkblue;" @click="appSorting(3)">빈도 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appSorting(3)">빈도 순</div>
+
   </div>
   <div class="selectBox dark" v-show="categorizingOptionCheck">
-    <div class="selectItem" @click="appCategorizing(0)">직접 설정</div>
-    <div class="selectItem" @click="appCategorizing(1)">기능 별</div>
-    <div class="selectItem" @click="appCategorizing(2)">색상 별</div>
-    <div class="selectItem" @click="appCategorizing(3)">회사 별</div>
+    <div class="selectItem" v-if="categorizingOp === 0" style="color: darkblue;" @click="appCategorizing(0)">직접 설정&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appCategorizing(0)">직접 설정</div>
+
+    <div class="selectItem" v-if="categorizingOp === 1" style="color: darkblue;" @click="appCategorizing(1)">기능 별&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appCategorizing(1)">기능 별</div>
+
+    <div class="selectItem" v-if="categorizingOp === 2" style="color: darkblue;" @click="appCategorizing(2)">색상 별&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appCategorizing(2)">색상 별</div>
+
+    <div class="selectItem" v-if="categorizingOp === 3" style="color: darkblue;" @click="appCategorizing(3)">회사 별&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
+    <div class="selectItem" v-else @click="appCategorizing(3)">회사 별</div>
   </div>
 </template>
 
@@ -28,6 +43,8 @@ export default {
       defaultOptionCheck: true,
       sortingOptionCheck: false,
       categorizingOptionCheck: false,
+      sortingOp: 0,
+      categorizingOp: 0,
     }
   },
   watch: {
@@ -53,12 +70,14 @@ export default {
       this.defaultOptionCheck = true;
       this.categorizingOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.sortingOp = value;
     },
     appCategorizing: function(value) {
       this.$emit("appCategorizing", value);
       this.defaultOptionCheck = true;
       this.categorizingOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.categorizingOp = value;
     }
   }
 }

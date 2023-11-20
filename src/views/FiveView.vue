@@ -43,65 +43,110 @@ export default {
       numberCnt: 0,
       selectBoxModalCheck: false,
       application: [],
-      applications: [
-        {idx: 0, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 1, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 2, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 3, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 4, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 5, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 6, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 7, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 8, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 9, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 11, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 12, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 13, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 16, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 18, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 19, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 22, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 27, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 1, color: 2, company: 3, numCnt: 0},
-        {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 1, color: 2, company: 3, numCnt: 0},
+      applicationsOriginal: [
+      {idx: 1, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 100},
+        {idx: 2, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 200},
+        {idx: 3, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 300},
+        {idx: 0, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 500},
+        {idx: 7, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 120},
+        {idx: 8, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 130},
+        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 160},
+        {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 180},
+        {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 220},
+        {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 240},
+        {idx: 6, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 260},
+        {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 350},
+        {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 320},
+        {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 420},
+        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 80},
+        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 130},
+        {idx: 11, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 1, color: 2, company: 3, numCnt: 510},
+        {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 170},
+        {idx: 19, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 370},
+        {idx: 18, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 470},
+        {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 520},
+        {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 600},
+        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 1, color: 2, company: 3, numCnt: 650},
+        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 660},
+        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 670},
+        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 680},
+        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 110},
+        {idx: 22, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 40},
+        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 390},
+        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 490},
+        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 290},
+        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 190},
+        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 150},
+        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 680},
+        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 630},
+        {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 1, color: 2, company: 3, numCnt: 720},
+        {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 1, color: 2, company: 3, numCnt: 750},
+        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 780},
+        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 1, color: 2, company: 3, numCnt: 20},
+        {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 1, color: 2, company: 3, numCnt: 270},
+      ],
 
+      applications: [
+        {idx: 1, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 2, company: 3, numCnt: 100},
+        {idx: 2, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 2, company: 3, numCnt: 200},
+        {idx: 3, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 1, color: 2, company: 3, numCnt: 300},
+        {idx: 0, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 1, color: 2, company: 3, numCnt: 500},
+        {idx: 7, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 1, color: 2, company: 3, numCnt: 120},
+        {idx: 8, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 1, color: 2, company: 3, numCnt: 130},
+        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 1, color: 2, company: 3, numCnt: 160},
+        {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 1, color: 2, company: 3, numCnt: 180},
+        {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 220},
+        {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 1, color: 2, company: 3, numCnt: 240},
+        {idx: 6, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 260},
+        {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 1, color: 2, company: 3, numCnt: 350},
+        {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 1, color: 2, company: 3, numCnt: 320},
+        {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 420},
+        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 80},
+        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 1, color: 2, company: 3, numCnt: 130},
+        {idx: 11, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 1, color: 2, company: 3, numCnt: 510},
+        {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 170},
+        {idx: 19, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 1, color: 2, company: 3, numCnt: 370},
+        {idx: 18, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 1, color: 2, company: 3, numCnt: 470},
+        {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 1, color: 2, company: 3, numCnt: 520},
+        {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 1, color: 2, company: 3, numCnt: 600},
+        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 1, color: 2, company: 3, numCnt: 650},
+        {idx: 23, name: "coupang", src: require("@/assets/img/icon/coupang.png"), function: 1, color: 2, company: 3, numCnt: 660},
+        {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 1, color: 2, company: 3, numCnt: 670},
+        {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 1, color: 2, company: 3, numCnt: 680},
+        {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 1, color: 2, company: 3, numCnt: 110},
+        {idx: 22, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 1, color: 2, company: 3, numCnt: 40},
+        {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 1, color: 2, company: 3, numCnt: 390},
+        {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 1, color: 2, company: 3, numCnt: 490},
+        {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 1, color: 2, company: 3, numCnt: 290},
+        {idx: 31, name: "Netflix", src: require("@/assets/img/icon/Netflix.png"), function: 1, color: 2, company: 3, numCnt: 190},
+        {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 1, color: 2, company: 3, numCnt: 150},
+        {idx: 33, name: "컬리", src: require("@/assets/img/icon/컬리.png"), function: 1, color: 2, company: 3, numCnt: 680},
+        {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 1, color: 2, company: 3, numCnt: 630},
+        {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 1, color: 2, company: 3, numCnt: 720},
+        {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 1, color: 2, company: 3, numCnt: 750},
+        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 1, color: 2, company: 3, numCnt: 780},
+        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 1, color: 2, company: 3, numCnt: 20},
+        {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 1, color: 2, company: 3, numCnt: 270},
       ]
     }
   },
   created() {
-    let index = -1;
-    for (let i = 0; i < this.applications.length; i++) {
-      if (i % 4 == 0) {
-        index += 1;
-        this.application.push([]);
-      }
-      
-      this.application[index].push(this.applications[i]);
-    }
-
-    console.log(this.application);
+    this.initSetting();
   },
   methods: {
+    initSetting: function() {
+      this.application = [];
+
+      let index = -1;
+      for (let i = 0; i < this.applications.length; i++) {
+        if (i % 4 == 0) {
+          index += 1;
+          this.application.push([]);
+        }
+        
+        this.application[index].push(this.applications[i]);
+      }
+    },
     closeSelectBoxModal : function() {
       this.selectBoxModalCheck = false;
     },
@@ -113,7 +158,25 @@ export default {
 
     appSorting: function(value) {
       console.log("sorting selected "+ value);
+      if (value === 3) {
+        this.applications.sort(function (a, b) {
+          return b.numCnt - a.numCnt;
+        });
+      } else if (value === 1) {
+        this.applications.sort(function (a, b) {
+          return a.name < b.name ? -1 : a.name > b.name ? 1: 0;
+        })
+      } else if (value === 2) {
+        this.applications.sort(function (a, b) {
+          return a.idx - b.idx;
+        })
+      } else if (value === 0) {
+        this.applications = Array.from(this.applicationsOriginal);
+      }
+
       this.selectBoxModalCheck = false;
+
+      this.initSetting();
     },
 
     appCategorizing: function(value) {
