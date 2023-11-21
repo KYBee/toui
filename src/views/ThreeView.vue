@@ -92,7 +92,7 @@ export default {
       userPassword: "",
       currentUserIdLength: 0,
       currentUserPasswordLength: 0,
-      krtoen: false,
+      krtoen: true,
       activeButton: require("@/assets/keyboard/Toolbar-Search-active.png"),
       inactiveButton: require("@/assets/keyboard/Toolbar-Search-inactive.png"),
       keyMap : {
