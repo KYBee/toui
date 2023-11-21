@@ -8,7 +8,7 @@
           <div class="appItem">
 
             <div class="appTotalContainerOne"  @click="modalOpen(4)">
-              <div class="appIconContainer">
+              <div class="appIconContainer squircle">
                 <img class="appIcon" :src="this.application4.src" alt="">
               </div>
               <div class="appName" v-if="this.application4.isNickname===false">{{ this.application4.name }}</div>
@@ -637,7 +637,7 @@ export default {
 .appIcon {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius:20px;
 }
 
 .appName {
@@ -767,4 +767,5 @@ export default {
   align-items: center;
   margin-bottom: 2px;
 }
+
 </style>
