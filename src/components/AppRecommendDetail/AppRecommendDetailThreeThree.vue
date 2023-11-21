@@ -23,16 +23,11 @@ export default {
   data () {
     return {
       applications:[
-        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 3, color: 2, company: 1, numCnt: 160, op: 0},
-        {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
-        {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
-        {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
-        {idx: 6, name: "음성 녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
-        {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 3, color: 3, company: 1, numCnt: 350, op: 0},
-        {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
-        {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
-        {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 3, color: 1, company: 1, numCnt: 80, op: 0},
-      ],
+      {idx: 3, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 2, color: 2, company: 3, numCnt: 300, op: 0},
+      {idx: 0, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 2, color: 2, company: 3, numCnt: 500, op: 0},
+      {idx: 18, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 4, color: 2, company: 3, numCnt: 470, op: 0},
+
+    ],
     }
   },
 

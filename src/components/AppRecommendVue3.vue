@@ -15,52 +15,40 @@
     </div>
   </div>
   <div>
-    <AppRecommendDetailOneOne v-show="closeRecommendGroupCheck1" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneTwo v-show="closeRecommendGroupCheck2" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneThree v-show="closeRecommendGroupCheck3" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneFour v-show="closeRecommendGroupCheck4" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneFive v-show="closeRecommendGroupCheck5" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneSix v-show="closeRecommendGroupCheck6" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneSeven v-show="closeRecommendGroupCheck7" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneEight v-show="closeRecommendGroupCheck8" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
-    <AppRecommendDetailOneNine v-show="closeRecommendGroupCheck9" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeOne v-show="closeRecommendGroupCheck1" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeTwo v-show="closeRecommendGroupCheck2" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeThree v-show="closeRecommendGroupCheck3" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeFour v-show="closeRecommendGroupCheck4" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeFive v-show="closeRecommendGroupCheck5" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
+    <AppRecommendDetailThreeSix v-show="closeRecommendGroupCheck6" @closeRecommendGroupingModal="closeRecommendGroupingModal"/>
   </div>
 </template>
 
 <script>
-import AppRecommendDetailOneOne from '@/components/AppRecommendDetail/AppRecommendDetailOneOne';
-import AppRecommendDetailOneTwo from '@/components/AppRecommendDetail/AppRecommendDetailOneTwo';
-import AppRecommendDetailOneThree from '@/components/AppRecommendDetail/AppRecommendDetailOneThree';
-import AppRecommendDetailOneFour from '@/components/AppRecommendDetail/AppRecommendDetailOneFour';
-import AppRecommendDetailOneFive from '@/components/AppRecommendDetail/AppRecommendDetailOneFive';
-import AppRecommendDetailOneSix from '@/components/AppRecommendDetail/AppRecommendDetailOneSix';
-import AppRecommendDetailOneSeven from '@/components/AppRecommendDetail/AppRecommendDetailOneSeven';
-import AppRecommendDetailOneEight from '@/components/AppRecommendDetail/AppRecommendDetailOneEight';
-import AppRecommendDetailOneNine from '@/components/AppRecommendDetail/AppRecommendDetailOneNine';
+import AppRecommendDetailThreeOne from '@/components/AppRecommendDetail/AppRecommendDetailThreeOne';
+import AppRecommendDetailThreeTwo from '@/components/AppRecommendDetail/AppRecommendDetailThreeTwo';
+import AppRecommendDetailThreeThree from '@/components/AppRecommendDetail/AppRecommendDetailThreeThree';
+import AppRecommendDetailThreeFour from '@/components/AppRecommendDetail/AppRecommendDetailThreeFour';
+import AppRecommendDetailThreeFive from '@/components/AppRecommendDetail/AppRecommendDetailThreeFive';
+import AppRecommendDetailThreeSix from '@/components/AppRecommendDetail/AppRecommendDetailThreeSix';
 
 
 
 export default {
   components: {
-    AppRecommendDetailOneOne,
-    AppRecommendDetailOneTwo,
-    AppRecommendDetailOneThree,
-    AppRecommendDetailOneFour,
-    AppRecommendDetailOneFive,
-    AppRecommendDetailOneSix,
-    AppRecommendDetailOneSeven,
-    AppRecommendDetailOneEight,
-    AppRecommendDetailOneNine,
+    AppRecommendDetailThreeOne,
+    AppRecommendDetailThreeTwo,
+    AppRecommendDetailThreeThree,
+    AppRecommendDetailThreeFour,
+    AppRecommendDetailThreeFive,
+    AppRecommendDetailThreeSix,
 
   },
   created() {
     let index = 0;
 
-    console.log(index);
-
     for (let item of this.name) {
       if (index === this.categoryType) {
-        console.log("hello");
         this.selectedItem = item;
         break;
       } else {
@@ -133,8 +121,8 @@ export default {
       closeRecommendGroupCheck9: false,
       closeRecommendGroupCheck10: false,
 
-      checked:[true, true, true, true, true, true, true, true, true],
-      categoryType: 1,
+      checked:[true, true, true, true, true, true],
+      categoryType: 3,
       selectedItem:[],
       name : [
         [],

@@ -8,15 +8,15 @@
       </div>
 
       <div class="select-box-modal-wrap5" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
-        <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing" :numberCnt="numberCnt"/>
+        <SelectBoxView @appSorting="appSorting" @appCategorizing="appCategorizing" :numberCnt="numberCnt" v-model:sortingOption="sortingOption"/>
       </div>
 
-      <div class="content-middle5">
-        <div class="appContainer5" v-for="(appPage, index) in application" :key="index">
+      <div class="content-middle5" :key="needToChange">
+        <div class="appContainer5" v-for="(appPage, index) in this.application" :key="index">
           <div class="appLine5" v-for="(appList, index) in appPage" :key="index">
             <div class="appItem5" v-for="(app, i) in appList" :key="i">
               <ApplicationVue v-if="app.op === 0" v-bind:application="app" /> 
-              <AppFolderVue v-else v-bind:application="app" v-bind:appList="app.appList" />
+              <AppFolderVue v-else v-bind:application="app" v-bind:appList="app.appList" v-model:sortingOption="sortingOption"/>
             </div>
           </div>
         </div>
@@ -46,8 +46,9 @@ export default {
       functionList: [[], [], [], [], [], [], [], [], [],],
       colorList: [[], [], [], []],
       companyList: [[], [], [], [], [], []],
-
+      needToChange: 0,
       numberCnt: 0,
+      sortingOption: 1,
       selectBoxModalCheck: false,
       application: [
         [],
@@ -55,13 +56,13 @@ export default {
       ],
 
       applicationsOriginal: [
-        {idx: 1, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 10, company: 1, numCnt: 100, op: 0},
+      {idx: 1, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 10, company: 1, numCnt: 100, op: 0},
         {idx: 2, name: "더헬스", src: require("@/assets/img/icon/더헬스.png"), function: 1, color: 10, company: 1, numCnt: 200, op: 0},
         {idx: 3, name: "카카오뱅크", src: require("@/assets/img/icon/카카오뱅크.png"), function: 2, color: 2, company: 3, numCnt: 300, op: 0},
         {idx: 0, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 2, color: 2, company: 3, numCnt: 500, op: 0},
         {idx: 7, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 2, color: 2, company: 6, numCnt: 120, op: 0},
         {idx: 8, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 2, color: 3, company: 1, numCnt: 130, op: 0},
-        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 3, color: 2, company: 1, numCnt: 160, op: 0},
+        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 3, color: 3, company: 1, numCnt: 160, op: 0},
         {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
         {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
         {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
@@ -70,14 +71,13 @@ export default {
         {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
         {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
         {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 3, color: 1, company: 1, numCnt: 80, op: 0},
-        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 3, color: 1, company: 1, numCnt: 130, op: 0},
         {idx: 11, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 4, color: 3, company: 4, numCnt: 510, op: 0},
         {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 4, color: 4, company: 5, numCnt: 170, op: 0},
         {idx: 19, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 4, color: 4, company: 5, numCnt: 370, op: 0},
         {idx: 18, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 4, color: 2, company: 3, numCnt: 470, op: 0},
         {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 10, color: 4, company: 10, numCnt: 520, op: 0},
         {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 5, color: 1, company: 10, numCnt: 600, op: 0},
-        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 1, color: 10, company: 3, numCnt: 650, op: 0},
+        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 5, color: 1, company: 10, numCnt: 650, op: 0},
         {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 5, color: 2, company: 10, numCnt: 670, op: 0},
         {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 7, color: 10, company: 4, numCnt: 68, op: 0},
         {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 5, color: 4, company: 10, numCnt: 110, op: 0},
@@ -91,8 +91,8 @@ export default {
         {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 8, color: 1, company: 10, numCnt: 630, op: 0},
         {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 8, color: 1, company: 10, numCnt: 720, op: 0},
         {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 9, color: 2, company: 10, numCnt: 750, op: 0},
-        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 9, color: 2, company: 10, numCnt: 780, op: 0},
-        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 4, color: 2, company: 5, numCnt: 20, op: 0},
+        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 9, color: 4, company: 10, numCnt: 780, op: 0},
+        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 4, color: 4, company: 5, numCnt: 20, op: 0},
         {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 2, color: 2, company: 6, numCnt: 270, op: 0},
       ],
 
@@ -103,7 +103,7 @@ export default {
         {idx: 0, name: "카카오페이", src: require("@/assets/img/icon/카카오페이.png"), function: 2, color: 2, company: 3, numCnt: 500, op: 0},
         {idx: 7, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 2, color: 2, company: 6, numCnt: 120, op: 0},
         {idx: 8, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 2, color: 3, company: 1, numCnt: 130, op: 0},
-        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 3, color: 2, company: 1, numCnt: 160, op: 0},
+        {idx: 9, name: "캘린더", src: require("@/assets/img/icon/캘린더.png"), function: 3, color: 3, company: 1, numCnt: 160, op: 0},
         {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
         {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
         {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
@@ -112,14 +112,13 @@ export default {
         {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
         {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
         {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 3, color: 1, company: 1, numCnt: 80, op: 0},
-        {idx: 15, name: "갤러리", src: require("@/assets/img/icon/갤러리.png"), function: 3, color: 1, company: 1, numCnt: 130, op: 0},
         {idx: 11, name: "Facebook", src: require("@/assets/img/icon/Facebook.png"), function: 4, color: 3, company: 4, numCnt: 510, op: 0},
         {idx: 17, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 4, color: 4, company: 5, numCnt: 170, op: 0},
         {idx: 19, name: "네이버 카페", src: require("@/assets/img/icon/네이버 카페.png"), function: 4, color: 4, company: 5, numCnt: 370, op: 0},
         {idx: 18, name: "카카오톡", src: require("@/assets/img/icon/카카오톡.png"), function: 4, color: 2, company: 3, numCnt: 470, op: 0},
         {idx: 20, name: "SNOW", src: require("@/assets/img/icon/SNOW.png"), function: 10, color: 4, company: 10, numCnt: 520, op: 0},
         {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 5, color: 1, company: 10, numCnt: 600, op: 0},
-        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 5, color: 10, company: 3, numCnt: 650, op: 0},
+        {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 5, color: 1, company: 10, numCnt: 650, op: 0},
         {idx: 24, name: "이마트몰", src: require("@/assets/img/icon/이마트몰.png"), function: 5, color: 2, company: 10, numCnt: 670, op: 0},
         {idx: 25, name: "Instagram", src: require("@/assets/img/icon/Instagram.png"), function: 7, color: 10, company: 4, numCnt: 68, op: 0},
         {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 5, color: 4, company: 10, numCnt: 110, op: 0},
@@ -133,14 +132,19 @@ export default {
         {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 8, color: 1, company: 10, numCnt: 630, op: 0},
         {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 8, color: 1, company: 10, numCnt: 720, op: 0},
         {idx: 36, name: "똑닥", src: require("@/assets/img/icon/똑닥.png"), function: 9, color: 2, company: 10, numCnt: 750, op: 0},
-        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 9, color: 2, company: 10, numCnt: 780, op: 0},
-        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 4, color: 2, company: 5, numCnt: 20, op: 0},
+        {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 9, color: 4, company: 10, numCnt: 780, op: 0},
+        {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 4, color: 4, company: 5, numCnt: 20, op: 0},
         {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 2, color: 2, company: 6, numCnt: 270, op: 0},
       ]
     }
   },
   created() {
     this.initSetting();
+  },
+  watch: {
+    needToChange: function() {
+      this.initSetting();
+    }
   },
   methods: {
     initSetting: function() {
@@ -167,8 +171,6 @@ export default {
         
         this.application[page][index].push(this.applications[i]);
       }
-      console.log("show application");
-      console.log(this.application);
     },
     closeSelectBoxModal : function() {
       this.selectBoxModalCheck = false;
@@ -180,31 +182,56 @@ export default {
     },
 
     appSorting: function(value) {
-      console.log("sorting selected "+ value);
 
       if (value === 3) {
         this.applications.sort(function (a, b) {
           return b.numCnt - a.numCnt;
         });
+        this.sortingOption = value;
+
       } else if (value === 1) {
         this.applications.sort(function (a, b) {
           return a.name < b.name ? -1 : a.name > b.name ? 1: 0;
         })
+        this.sortingOption = value;
+
       } else if (value === 2) {
         this.applications.sort(function (a, b) {
           return a.idx - b.idx;
         })
+        this.sortingOption = value;
+
       } else if (value === 0) {
         this.applications = Array.from(this.applicationsOriginal);
+        this.sortingOption = value;
+
+      } else if (value === 99) {
+
+        this.applications = Array.from(this.applicationsOriginal);
+
+        if (this.sortingOption === 3) {
+          this.applications.sort(function (a, b) {
+          return b.numCnt - a.numCnt;
+        });
+        } else if (this.sortingOption === 1) {
+          this.applications.sort(function (a, b) {
+          return a.name < b.name ? -1 : a.name > b.name ? 1: 0;
+        })
+        } else if (this.sortingOption === 2) {
+          this.applications.sort(function (a, b) {
+          return a.idx - b.idx;
+        })
+        } 
       }
+
 
       this.selectBoxModalCheck = false;
 
-      this.initSetting();
+      this.needToChange += 1;
+      
     },
 
     appCategorizing:  function(value, op) {
-      console.log("Categorizing " + value);
       let selectOp = op;
 
       this.applications = [];
@@ -265,27 +292,26 @@ export default {
         //기능 
         for (let i = 0; i < this.functionList.length; i++) {
           if (selectOp.includes(i)) {
-            this.applications.push({idx: -1, name: "기능", src: require("@/assets/img/icon/folder.png"), function: i, color: 10, company: 1, numCnt: 10000, op: 100, appList: this.functionList[i]});
+            this.applications.push({idx: -1, name: "000", src: require("@/assets/img/icon/folder.png"), function: i, color: 10, company: 1, numCnt: 10000, op: 100, appList: this.functionList[i]});
           }
         }
       } else if (value === 2) {
         //색상
         for (let i = 0; i < this.colorList.length; i++) {
           if (selectOp.includes(i)) {
-            this.applications.push({idx: -1, name: "색깔", src: require("@/assets/img/icon/folder.png"), function: 1, color: i, company: 1, numCnt: 10000, op: 100, appList: this.colorList[i]});
+            this.applications.push({idx: -1, name: "001", src: require("@/assets/img/icon/folder.png"), function: 1, color: i, company: 1, numCnt: 10000, op: 100, appList: this.colorList[i]});
           }
         }
       } else if (value === 3) {
         //회사
         for (let i = 0; i < this.companyList.length; i++) {
           if (selectOp.includes(i)) {
-            this.applications.push({idx: -1, name: "회사", src: require("@/assets/img/icon/folder.png"), function: 1, color: 10, company: i, numCnt: 10000, op: 100, appList: this.companyList[i]});
+            this.applications.push({idx: -1, name: "002", src: require("@/assets/img/icon/folder.png"), function: 1, color: 10, company: i, numCnt: 10000, op: 100, appList: this.companyList[i]});
           }
         }
       }
 
       for (let item of this.applicationsOriginal) {
-        console.log(item);
         if (value === 1) {
           if (!selectOp.includes(item.function)) {
             this.applications.push(item);
@@ -301,7 +327,8 @@ export default {
         }
       }
 
-      this.initSetting();
+      this.needToChange += 1;
+
       this.selectBoxModalCheck = false;
     }
   }
