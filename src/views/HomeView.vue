@@ -28,6 +28,10 @@ export default {
 </script>
 
 <style>
+* {
+  font-family: 'SamsungOne', sans-serif !important;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -54,19 +58,24 @@ nav {
 
 .btn-title {
   text-decoration: none;
+  color: black;
 }
 
 .last-btn {
   width: 300px;
   height: 80px;
+  font-family: 'SamsungOne', sans-serif !important;
+
 }
 
 .btn, .last-btn {
   border: 0;
   border-radius: 10px;
   background: #C5CECA;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
+  font-family: 'SamsungOne', sans-serif !important;
+
 }
 
 </style>

@@ -50,9 +50,18 @@ nav a.router-link-exact-active {
 }
 body{
  -ms-overflow-style: none;
+ font-family: 'SamsungOne', sans-serif !important;
  }
  
 ::-webkit-scrollbar {
   display: none;
+}
+.v-application {
+  font-family: 'SamsungOne', sans-serif !important;
+}
+@font-face {
+  font-family:'SamsungOne';
+  src: url('@/assets/fonts/SamsungOne-400.ttf') format('truetype');
+  font-weight: 400;
 }
 </style>

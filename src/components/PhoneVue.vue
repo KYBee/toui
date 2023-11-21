@@ -646,6 +646,7 @@ export default {
   align-items: flex-start;
   font-size: .7rem;
   margin-top: .3rem;
+  padding: 0 .3rem;
   color: white;
   width: 70px;
   height: 40px;
