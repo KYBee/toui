@@ -554,7 +554,7 @@ export default {
   height: 3rem;
   justify-content: space-between;
   align-content: center;
-  background: #CED1D4;
+  background: #FFFFFF;
   border-radius: 20px 20px 0 0;
 }
 
@@ -583,7 +583,7 @@ export default {
   height: 3rem;
   justify-content: space-around;
   align-content: center;
-  background: rgba(206,209,212, 0.8);
+  background: rgba(255,255,255, 0.9);
   border-radius: 0 0 20px 20px;
 }
 

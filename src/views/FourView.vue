@@ -336,7 +336,7 @@ export default {
   left: calc(50% - 180px);
   top: calc(300px);
   width: 360px;
-  height: 723px;
+  height: 730px;
   z-index: 20;
 }
 
@@ -345,7 +345,7 @@ export default {
   left: calc(50% - 180px);
   top: calc(300px);
   width: 360px;
-  height: 730px;
+  height: 740px;
   z-index: 20;
   background: rgb(205, 166, 239)
 }
