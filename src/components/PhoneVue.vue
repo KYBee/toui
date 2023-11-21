@@ -562,9 +562,8 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 700;
-  width: 260px;
+  width: 250px;
   justify-content: center;
-  overflow:scroll;
 }
 
 .memo-right {
