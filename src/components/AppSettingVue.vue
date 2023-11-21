@@ -151,7 +151,7 @@
                           사용자의 화면에서 이 별칭으로 표시됩니다.
                       </div>
                   </div>
-                  <input type="text" class="nickname-modal-input" maxlength="15" v-bind:value="this.nicknameInput" v-on:input="updateInput">
+                  <input type="text" class="nickname-modal-input" maxlength="12" v-bind:value="this.nicknameInput" v-on:input="updateInput">
                   <div class="nickname-modal-button">
                       <div class="nickname-modal-cancel" style="cursor:pointer" @click="closeModal">취소</div>
                       <div class="nickname-modal-success" style="cursor:pointer" @click="successModal">완료</div>
@@ -289,7 +289,7 @@ box-sizing: border-box;
 .app-info-title {
   margin: 16px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .app-info-bottom {
@@ -316,9 +316,10 @@ box-sizing: border-box;
 }
 
 .small-title {
-  font-weight: 300;
+  font-weight: 500;
   text-align: left;
   font-size: 13px;
+  color: gray;
 }
 
 .app-option-container {
@@ -360,7 +361,7 @@ box-sizing: border-box;
 }
 
 .app-option-title {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .app-option-subtitle {
@@ -372,7 +373,7 @@ box-sizing: border-box;
 .app-option-subtitle-v2 {
   font-weight: 500;
   font-size: 13px;
-  color: black;
+  color: gray;
 }
 
 .nickname-modal-wrap {

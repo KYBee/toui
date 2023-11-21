@@ -28,10 +28,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -61,10 +61,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -94,10 +94,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -128,10 +128,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -164,10 +164,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -197,10 +197,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -230,10 +230,10 @@
                   </div>
                 </div>
                 <div class="memoOption">
-                  <div class="memoOptionDetail"><img src="@/assets/select.svg" alt="">선택</div>
-                  <div class="memoOptionDetail"><img src="@/assets/homeAdd.svg" alt="">홈 화면에 추가</div>
-                  <div class="memoOptionDetail"><img src="@/assets/uninstall.svg" alt="">설치 삭제</div>
-                  <div class="memoOptionDetail"><img src="@/assets/widget.svg" alt="">위젯</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
               </div>
             </div>
@@ -545,9 +545,11 @@ export default {
   top: 108px;
   z-index: 899;
   left: 20px;
+  background:rgba(255,255,255,0.71);
 }
 
 .memoName {
+  position:relative;
   display: flex;
   flex-direction: row;
   width:100%;
@@ -562,11 +564,15 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 700;
-  width: 250px;
+  width: 100%;
+  z-index: 1;
   justify-content: center;
 }
 
 .memo-right {
+  left : 200px;
+  z-index: 2;
+  position: absolute;
   width: 2.5rem;
   height: 3rem;
   display: flex;
@@ -575,16 +581,7 @@ export default {
   margin-right: 1rem;
 }
 
-.memoOption {
-  display: flex;
-  flex-direction: row;
-  width:100%;
-  height: 3rem;
-  justify-content: space-around;
-  align-content: center;
-  background: rgba(255,255,255, 0.9);
-  border-radius: 0 0 20px 20px;
-}
+
 
 .memoOptionDetail {
   display:flex;
@@ -592,6 +589,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: .6rem;
+  width: 55px;
 }
 
 .memoOption img {
@@ -647,7 +645,7 @@ export default {
   justify-content: center;
   align-items: flex-start;
   font-size: .7rem;
-  padding: .3rem;
+  margin-top: .3rem;
   color: white;
   width: 70px;
   height: 40px;
@@ -657,7 +655,7 @@ export default {
 .modal-tri-1 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: -124px;
   z-index: 10;
 }
@@ -665,7 +663,7 @@ export default {
 .modal-tri-2 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: -44px;
   z-index: 10;
 
@@ -674,7 +672,7 @@ export default {
 .modal-tri-3 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: 36px;
   z-index: 10;
 
@@ -683,30 +681,89 @@ export default {
 .modal-tri-4 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: -124px;
 }
 
 .modal-tri-5 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: -44px;
 }
 
 .modal-tri-6 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: 36px;
 }
 
 .modal-tri-7 img {
   position: relative;
   width: 20px;
-  top: 119px;
+  top: 120px;
   left: 70px;
 }
 
+.blur {
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+}
+.brightness {
+  -webkit-backdrop-filter: brightness(1.5);
+  backdrop-filter: brightness(1.5);
+}
+.contrast {
+  -webkit-backdrop-filter: contrast(.2);
+  backdrop-filter: contrast(.2);
+}
+.drop-shadow {
+  -webkit-backdrop-filter: drop-shadow(5px 5px red);
+  backdrop-filter: drop-shadow(5px 5px red);
+}
+.grayscale {
+  -webkit-backdrop-filter: grayscale(.8);
+  backdrop-filter: grayscale(.8);
+}
+.hue-rotate {
+  -webkit-backdrop-filter: hue-rotate(45deg);
+  backdrop-filter: hue-rotate(45deg);
+}
+.invert {
+  -webkit-backdrop-filter: invert(1);
+  backdrop-filter: invert(1);
+}
+.opacity {
+  -webkit-backdrop-filter: opacity(.4);
+  backdrop-filter: opacity(.4);
+}
+.saturate {
+  -webkit-backdrop-filter: saturate(.3);
+  backdrop-filter: saturate(.3);
+}
+.sepia {
+  -webkit-backdrop-filter: sepia(.9);
+  backdrop-filter: sepia(.9);
+}
 
+.memoOption {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  height: 3rem;
+  justify-content: space-evenly;
+  align-content: center;
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 20px 20px;
+}
+
+.memoOptionIconImg {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+}
 </style>
