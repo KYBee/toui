@@ -1,7 +1,7 @@
 <template>
   <div class="phone searchbar">
     <input class="search" type="text" placeholder="검색">
-    <font-awesome-icon class="top-item" style="color: gray;" :icon="['fas', 'ellipsis-vertical']" />
+    <font-awesome-icon class="top-item" style="color: white;" :icon="['fas', 'ellipsis-vertical']" />
   </div>
 </template>
 
@@ -12,13 +12,11 @@ export default {
 </script>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-}
 
 .searchbar {
+  box-sizing: border-box;
   height: 40px;
-  background: #D9D9D9;
+  background: #dac8eb;
   border-radius: 20px;
   width:95%;
   display: flex;
@@ -26,7 +24,6 @@ export default {
   align-items: center;
   padding: 0 1rem;
   border: 0px;
-  opacity: 0.5;
   margin: 0 auto;
 }
 
@@ -38,5 +35,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.search::placeholder {
+  color: white;
 }
 </style>

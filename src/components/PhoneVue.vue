@@ -442,7 +442,7 @@ export default {
 }
 
 .phone-background {
-  background: url('@/assets/background/phone-background.png');
+  background: url('@/assets/background/phone-background4.png');
 }
 
 .middle {
@@ -583,7 +583,7 @@ export default {
   height: 3rem;
   justify-content: space-around;
   align-content: center;
-  background: rgba(206,209,212,0.6);
+  background: rgba(206,209,212, 0.8);
   border-radius: 0 0 20px 20px;
 }
 
@@ -629,29 +629,30 @@ export default {
   align-items: center;
   z-index: 1;
   position: relative;
+  padding-top: 10px;
 }
 .appIconContainer {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 0px;
-  border-radius: 25px;
 }
 
 .appIcon {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .appName {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: .6rem;
+  font-size: .7rem;
   padding: .3rem;
   color: white;
-  width: 80px;
+  width: 70px;
   height: 40px;
+  font-weight: 500;
 }
 
 .modal-tri-1 img {

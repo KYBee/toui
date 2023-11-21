@@ -50,12 +50,12 @@ export default {
   align-items: center;
   z-index: 5;
   position: relative;
-  top: 45px;
+  top: 40px;
   left: 40px;
 }
 .appIconContainer {
   width: 140px;
-  height: 150px;
+  height: 140px;
   border: 0px;
   border-radius: 50px;
 }
@@ -71,10 +71,10 @@ export default {
   justify-content: center;
   align-items: flex-start;
   font-size: .7rem;
-  padding: 8px;
+  padding: .3rem;
   color: white;
-  width: 120px;
-  height: 80px;
+  width: 70px;
+  height: 40px;
   flex-wrap: wrap;
   font-weight: 500;
 

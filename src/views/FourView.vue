@@ -5,7 +5,7 @@
         <PhoneTopBarVue />
         <div class="phone searchbar4">
           <input class="search4" type="text" placeholder="검색">
-          <font-awesome-icon class="top-item4" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+          <font-awesome-icon class="top-item4" style="color: white; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
         </div>
       </div>
       <div v-if="appSizeModalCheck===true">
@@ -93,7 +93,7 @@ export default {
         {idx: 7, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 8, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 9, name: "Knox Meeting", src: require("@/assets/img/icon/Knox Meeting.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
-        {idx: 10, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
+        {idx: 10, name: "음성 녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 11, name: "인터넷", src: require("@/assets/img/icon/인터넷.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 12, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
         {idx: 13, name: "네이버 메일", src: require("@/assets/img/icon/네이버 메일.png"), function: 1, color: 2, company: 3, numCnt: 0, bigSize: false},
@@ -257,6 +257,7 @@ export default {
 
 .phone-scroll-middle4 {
   height: 620px;
+  padding-top: 10px;
 }
 
 .appContainer4 {
@@ -300,7 +301,7 @@ export default {
   box-sizing: border-box;
 
   height: 40px;
-  background: #D9D9D9;
+  background: #dac8eb;
   border-radius: 20px;
   width:95%;
   display: flex;
@@ -308,7 +309,7 @@ export default {
   align-items: center;
   padding: 0 1rem;
   border: 0px;
-  opacity: 0.5;
+  opacity: 0.7;
   margin: 0 auto;
 }
 
@@ -320,7 +321,15 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: .9rem;
+  font-weight: 700;
+  color: white;
 }
+
+.search4::placeholder {
+  color: white;
+}
+
 
 .select-box-modal-wrap4 {
   position: absolute;
@@ -338,7 +347,7 @@ export default {
   width: 360px;
   height: 730px;
   z-index: 20;
-  background: rgba(0, 0, 0, 0.2)
+  background: rgb(205, 166, 239)
 }
 
 .emptybar4 {
@@ -348,11 +357,10 @@ export default {
 
 .sizing-box4 {
   width: 90%;
-  margin: 0 auto;
-  background: rgba(217, 217, 217, 0.3);
-  border-radius: 20px;
-  height: 60px;
-  margin: 10px auto auto;
+  background: #dac8eb;
+  border-radius: 25px;
+  height: 50px;
+  margin: 30px auto auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -363,6 +371,7 @@ export default {
 .sizing-title4 {
   color: white;
   font-size: .8rem;
+  font-weight: 700;
 }
 
 .appsize-checkbox4 {

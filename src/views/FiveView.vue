@@ -4,7 +4,7 @@
       <PhoneTopBarVue />
       <div class="phone searchbar5">
         <input class="search5" type="text" placeholder="검색">
-        <font-awesome-icon class="top-item5" style="color: gray; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
+        <font-awesome-icon class="top-item5" style="color: white; cursor: pointer;" :icon="['fas', 'ellipsis-vertical']" @click="openSelectBoxModal" />
       </div>
 
       <div class="select-box-modal-wrap5" v-show="selectBoxModalCheck" @click.self="closeSelectBoxModal">
@@ -12,8 +12,8 @@
       </div>
 
       <div class="content-middle5">
-        <div class="appContainer5">
-          <div class="appLine5" v-for="(appList, index) in application" :key="index">
+        <div class="appContainer5" v-for="(appPage, index) in application" :key="index">
+          <div class="appLine5" v-for="(appList, index) in appPage" :key="index">
             <div class="appItem5" v-for="(app, i) in appList" :key="i">
               <ApplicationVue v-if="app.op === 0" v-bind:application="app" /> 
               <AppFolderVue v-else v-bind:application="app" v-bind:appList="app.appList" />
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import PhoneTopBarVue from '@/components/PhoneTopBarVueBlack.vue';
-import PhoneBottomBarVue from '@/components/PhoneBottomBarVueBlack.vue';
-import ApplicationVue from '@/components/ApplicationVueBlack';
+import PhoneTopBarVue from '@/components/PhoneTopBarVue.vue';
+import PhoneBottomBarVue from '@/components/PhoneBottomBarVue.vue';
+import ApplicationVue from '@/components/ApplicationVue';
 import SelectBoxView from '@/components/SelectBoxVueFive.vue';
 import AppFolderVue from '@/components/AppFolderVue.vue';
 
@@ -49,7 +49,10 @@ export default {
 
       numberCnt: 0,
       selectBoxModalCheck: false,
-      application: [],
+      application: [
+        [],
+        [],
+      ],
 
       applicationsOriginal: [
         {idx: 1, name: "Samsung Health", src: require("@/assets/img/icon/Samsung Health.png"), function: 1, color: 10, company: 1, numCnt: 100, op: 0},
@@ -62,7 +65,7 @@ export default {
         {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
         {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
         {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
-        {idx: 6, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
+        {idx: 6, name: "음성 녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
         {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 3, color: 3, company: 1, numCnt: 350, op: 0},
         {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
         {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
@@ -104,7 +107,7 @@ export default {
         {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
         {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
         {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
-        {idx: 6, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
+        {idx: 6, name: "음성 녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
         {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 3, color: 3, company: 1, numCnt: 350, op: 0},
         {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
         {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
@@ -141,21 +144,31 @@ export default {
   },
   methods: {
     initSetting: function() {
-      this.application = [];
+      this.application = [[]];
+
       this.functionList = [[], [], [], [], [], [], [], [], [], []];
       this.colorList = [[], [], [], [], []];
       this.companyList = [[], [], [], [], [], [], []];
       
+      let page = 0;
       let index = -1;
       for (let i = 0; i < this.applications.length; i++) {
         if (i % 4 == 0) {
           index += 1;
-          this.application.push([]);
+
+          if (index === 6) {
+            page += 1;
+            index = 0;
+            this.application.push([]);
+          }
+
+          this.application[page].push([]);
         }
         
-        this.application[index].push(this.applications[i]);
+        this.application[page][index].push(this.applications[i]);
       }
-      console.log(this.application)
+      console.log("show application");
+      console.log(this.application);
     },
     closeSelectBoxModal : function() {
       this.selectBoxModalCheck = false;
@@ -288,8 +301,6 @@ export default {
         }
       }
 
-      console.log(this.applications);
-
       this.initSetting();
       this.selectBoxModalCheck = false;
     }
@@ -303,13 +314,15 @@ export default {
     margin: 0 auto;
 }
 .phone-background5 {
-  background: url('@/assets/background/phone-background5.png');
+  background: url('@/assets/background/phone-background4.png');
 }
 
 .content-middle5 {
   height: 600px;
   overflow: scroll;
   padding-top: 10px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 
@@ -319,7 +332,8 @@ export default {
   justify-content: flex-start;
   align-content: space-around;
   margin: .8rem 10px;
-  width: 680px;
+  min-width: 340px;
+  width: 340px;
   height: 570px;
   flex-wrap: wrap;
   overflow: scroll;
@@ -342,8 +356,9 @@ export default {
 }
 
 .searchbar5 {
+  box-sizing: border-box;
   height: 40px;
-  background: #D9D9D9;
+  background: #dac8eb;
   border-radius: 20px;
   width:95%;
   display: flex;
@@ -351,9 +366,7 @@ export default {
   align-items: center;
   padding: 0 1rem;
   border: 0px;
-  opacity: 0.5;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .search5 {
@@ -364,6 +377,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.search5::placeholder {
+  color: white;
 }
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="appTotalContainer">
+  <div class="appTotalContainer" @click="appFolderDetailOpen">
     <div class="appIconContainer">
       <img class="appIcon" :src="this.application.src" alt="">
     </div>
@@ -10,12 +10,17 @@
     </div>
     <div class="appName">{{ this.folderName }}</div>
   </div>
+
 </template>
 
 <script>
 export default {
+  components: {
+  },
   data() {
     return {
+      
+      appFolderDetailCheck:false,
       folderName:"",
       apps:[],
       appDisplay:[],
@@ -30,7 +35,7 @@ export default {
         {idx: 10, name: "내 파일", src: require("@/assets/img/icon/내 파일.png"), function: 3, color: 2, company: 1, numCnt: 180, op: 0},
         {idx: 5, name: "SmartThings", src: require("@/assets/img/icon/SmartThings.png"), function: 3, color: 4, company: 1, numCnt: 220, op: 0},
         {idx: 4, name: "Samsung Notes", src: require("@/assets/img/icon/Samsung Notes.png"), function: 3, color: 1, company: 1, numCnt: 240, op: 0},
-        {idx: 6, name: "삼성 음성녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
+        {idx: 6, name: "음성 녹음", src: require("@/assets/img/icon/삼성 음성녹음.png"), function: 3, color: 1, company: 1, numCnt: 260, op: 0},
         {idx: 16, name: "Galaxy Wearable", src: require("@/assets/img/icon/Galaxy Wearable.png"), function: 3, color: 3, company: 1, numCnt: 350, op: 0},
         {idx: 13, name: "Good Lock", src: require("@/assets/img/icon/Good Lock.png"), function: 3, color: 1, company: 1, numCnt: 320, op: 0},
         {idx: 12, name: "Bixby", src: require("@/assets/img/icon/Bixby.png"), function: 3, color: 10, company: 1, numCnt: 420, op: 0},
@@ -136,6 +141,15 @@ export default {
       }
     }
 
+  },
+  methods: {
+    appFolderDetailOpen: function() {
+      this.appFolderDetailCheck = true;
+    },
+
+    appFolderDetailClose: function() {
+      this.appFolderDetailCheck = false;
+    }
   }
 }
 </script>
@@ -150,16 +164,16 @@ export default {
   position: relative;
 }
 .appIconContainer {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 0px;
-  border-radius: 25px;
 }
+
 
 .appIcon {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 20px;
   position: relative;
 }
 
@@ -167,10 +181,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: .6rem;
+  font-size: .7rem;
   padding: .3rem;
   color: black;
-  width: 60px;
+  width: 70px;
   height: 40px;
   flex-wrap: wrap;
   font-weight: 500;
@@ -178,9 +192,9 @@ export default {
 }
 
 .appIconImg {
-  width: 12px;
-  height: 12px;
-  margin: 1.5px;
+  width: 11px;
+  height: 11px;
+  margin: 1px;
 }
 
 .appIconImg > img {
@@ -189,13 +203,13 @@ export default {
 }
 
 .appIconCompress {
-  width: 45px;
+  width: 40px;
   height: 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap : wrap;
   z-index: 2;
   position: relative;
-  top: -57px;
+  top: -50px;
 }
 </style>

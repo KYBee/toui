@@ -52,26 +52,26 @@ export default {
   position: relative;
 }
 .appIconContainer {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 0px;
-  border-radius: 25px;
 }
+
 
 .appIcon {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .appName {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: .6rem;
+  font-size: .7rem;
   padding: .3rem;
   color: black;
-  width: 60px;
+  width: 70px;
   height: 40px;
   flex-wrap: wrap;
   font-weight: 500;
