@@ -34,13 +34,8 @@ export default {
   methods: {
     closeModal: function() {
       this.$emit("closeFolderDetailView");
-      console.log("hello")
     }
   },
-
-  created() {
-    console.log(this.apps);
-  }
 }
 </script>
 
