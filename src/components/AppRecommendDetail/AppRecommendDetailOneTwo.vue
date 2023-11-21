@@ -28,6 +28,7 @@ export default {
       {idx: 7, name: "KB국민은행", src: require("@/assets/img/icon/KB국민은행.png"), function: 2, color: 2, company: 6, numCnt: 120, op: 0},
       {idx: 8, name: "Samsung Pay", src: require("@/assets/img/icon/Samsung Pay.png"), function: 2, color: 3, company: 1, numCnt: 130, op: 0},
       {idx: 39, name: "KB라이프", src: require("@/assets/img/icon/KB라이프.png"), function: 2, color: 2, company: 6, numCnt: 270, op: 0},
+
     ],
     }
   },

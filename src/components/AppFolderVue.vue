@@ -9,13 +9,16 @@
     </div>
     <div class="appName">{{ this.folderName }}</div>
   </div>
-
+  <div class="appFolderDetail" v-show="appFolderDetailCheck">
+    <AppFolderDetailVue @closeFolderDetailView="appFolderDetailClose" v-bind:apps="this.apps" v-bind:name="this.folderName"/>
+  </div>
 </template>
 
 <script>
-
+import AppFolderDetailVue from './AppFolderDetailVue.vue';
 export default {
   components: {
+    AppFolderDetailVue
   },
   data() {
     return {
@@ -148,7 +151,8 @@ export default {
 
     appFolderDetailClose: function() {
       this.appFolderDetailCheck = false;
-    }
+    },
+
   }
 }
 </script>
@@ -212,5 +216,13 @@ export default {
   z-index: 2;
   position: relative;
   top: -48px;
+}
+
+.appFolderDetail {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: 300px;
+  height: 730px;
+  width: 360px;
 }
 </style>
