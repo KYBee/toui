@@ -8,7 +8,7 @@
           <div class="appItem">
 
             <div class="appTotalContainerOne"  @click="modalOpen(4)">
-              <div class="appIconContainer squircle">
+              <div class="appIconContainer">
                 <img class="appIcon" :src="this.application4.src" alt="">
               </div>
               <div class="appName" v-if="this.application4.isNickname===false">{{ this.application4.name }}</div>
@@ -24,6 +24,7 @@
                   <div class="memo-middle" v-if="this.application4.isNickname===false">{{this.application4.nickname}}</div>
                   <div class="memo-middle" v-if="this.application4.isNickname===true">{{this.application4.name}}</div>
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application4.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(4)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(4)">
                   </div>
                 </div>
@@ -36,6 +37,14 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing4" @click="closeAppNameEditing(4)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput4" v-show="this.appNameEditing4" :value="this.application4.nickname">
+
+
+
+
 
           <div class="appItem">
             
@@ -57,6 +66,7 @@
                   <div class="memo-middle" v-if="this.application5.isNickname===true">{{this.application5.name}}</div>
 
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application5.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(5)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(5)">
                   </div>
                 </div>
@@ -69,6 +79,12 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing5" @click="closeAppNameEditing(5)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput5" v-show="this.appNameEditing5" :value="this.application5.nickname">
+
+
 
           <div class="appItem">
             
@@ -90,6 +106,7 @@
                   <div class="memo-middle" v-if="this.application6.isNickname===true">{{this.application6.name}}</div>
 
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application6.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(6)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(6)">
                   </div>
                 </div>
@@ -102,6 +119,11 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing6" @click="closeAppNameEditing(6)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput6" v-show="this.appNameEditing6" :value="this.application6.nickname">
+
 
 
           <div class="appItem">
@@ -124,6 +146,7 @@
                   <div class="memo-middle" v-if="this.application7.isNickname===true">{{this.application7.name}}</div>
 
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application7.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(7)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(7)">
                   </div>
                 </div>
@@ -136,7 +159,10 @@
               </div>
             </div>
           </div>
-
+          <div class="appEditing" v-show="this.appNameEditing7" @click="closeAppNameEditing(7)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput7" v-show="this.appNameEditing7" :value="this.application7.nickname">
         </div>
 
 
@@ -160,6 +186,7 @@
                   <div class="memo-middle" v-if="this.application1.isNickname===false">{{this.application1.nickname}}</div>
                   <div class="memo-middle" v-if="this.application1.isNickname===true">{{this.application1.name}}</div>
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application1.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(1)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(1)">
                   </div>
                 </div>
@@ -172,6 +199,11 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing1" @click="closeAppNameEditing(1)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput1" v-show="this.appNameEditing1" :value="this.application1.nickname">
+
 
           <div class="appItem">
             
@@ -193,6 +225,7 @@
                   <div class="memo-middle" v-if="this.application2.isNickname===true">{{this.application2.name}}</div>
 
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application2.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(2)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(2)">
                   </div>
                 </div>
@@ -205,6 +238,11 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing2" @click="closeAppNameEditing(2)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput2" v-show="this.appNameEditing2" :value="this.application2.nickname">
+
 
           <div class="appItem">
             
@@ -226,6 +264,7 @@
                   <div class="memo-middle" v-if="this.application3.isNickname===true">{{this.application3.name}}</div>
 
                   <div class="memo-right">
+                    <img class="pencil" v-if="this.application3.isNickname===false" src="@/assets/editIcon.svg" style="cursor:pointer" alt="" @click="openAppNameChange(3)">
                     <img src="@/assets/detailIcon.svg" style="cursor:pointer" alt="" @click="openAppSettingModal(3)">
                   </div>
                 </div>
@@ -238,31 +277,38 @@
               </div>
             </div>
           </div>
+          <div class="appEditing" v-show="this.appNameEditing3" @click="closeAppNameEditing(3)">
+            &nbsp;
+          </div>
+          <input type="text" maxlength="12" class="appEditingInputClass" id="appEditingInput3" v-show="this.appNameEditing3" :value="this.application3.nickname">
+
+
+
+
         </div>
       </div>
     </div>
     <PhoneBottomBarVue />
     <div class="app-setting-modal" v-show="appSettingModal4">
-      <AppSettingVue :app="this.application4" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application4" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
     <div class="app-setting-modal" v-show="appSettingModal5">
-      <AppSettingVue :app="this.application5" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application5" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
     <div class="app-setting-modal" v-show="appSettingModal6">
-      <AppSettingVue :app="this.application6" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application6" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
     <div class="app-setting-modal" v-show="appSettingModal7">
-      <AppSettingVue :app="this.application7" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application7" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
-
     <div class="app-setting-modal" v-show="appSettingModal1">
-      <AppSettingVue :app="this.application1" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application1" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
     <div class="app-setting-modal" v-show="appSettingModal2">
-      <AppSettingVue :app="this.application2" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application2" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
     <div class="app-setting-modal" v-show="appSettingModal3">
-      <AppSettingVue :app="this.application3" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" />
+      <AppSettingVue :app="this.application3" @closeAppModal="closeAppSettingModal" @nicknameChanged="nicknameChanged" @modeChanged="modeChanged" :key="this.numCnt"/>
     </div>
   </div>
 </template>
@@ -276,6 +322,8 @@ import AppSettingVue from "./AppSettingVue.vue";
 export default {
   data() {
     return {
+      numCnt: 0,
+
       now: 0,
       modalOneCheck: false,
       modalTwoCheck: false,
@@ -293,6 +341,14 @@ export default {
       appSettingModal5: false,
       appSettingModal6: false,
       appSettingModal7: false,
+
+      appNameEditing1: false,
+      appNameEditing2: false,
+      appNameEditing3: false,
+      appNameEditing4: false,
+      appNameEditing5: false,
+      appNameEditing6: false,
+      appNameEditing7: false,
 
       app:{},
     }
@@ -318,6 +374,82 @@ export default {
   },
 
   methods: {
+    openAppNameChange: function(value) {
+      if (value === 1) {
+        this.appNameEditing1 = true;
+      } else if (value === 2) {
+        this.appNameEditing2 = true;
+      } else if (value === 3) {
+        this.appNameEditing3 = true;
+      } else if (value === 4) {
+        this.appNameEditing4 = true;
+      } else if (value === 5) {
+        this.appNameEditing5 = true;
+      } else if (value === 6) {
+        this.appNameEditing6 = true;
+      } else if (value === 7) {
+        this.appNameEditing7 = true;
+      }
+    },
+
+    closeAppNameEditing: function(value) {
+
+      if (value === 1) {
+        let target = document.querySelectorAll("#appEditingInput1");
+        this.application1.nickname = target[0].value;
+      } else if (value === 2) {
+        let target = document.querySelectorAll("#appEditingInput2");
+        this.application2.nickname = target[0].value;
+      } else if (value === 3) {
+        let target = document.querySelectorAll("#appEditingInput3");
+        this.application3.nickname = target[0].value;
+      } else if (value === 4) {
+        let target = document.querySelectorAll("#appEditingInput4");
+        this.application4.nickname = target[0].value;
+      } else if (value === 5) {
+        let target = document.querySelectorAll("#appEditingInput5");
+        this.application5.nickname = target[0].value;
+      } else if (value === 6) {
+        let target = document.querySelectorAll("#appEditingInput6");
+        this.application6.nickname = target[0].value;
+      } else if (value === 7) {
+        let target = document.querySelectorAll("#appEditingInput7");
+        this.application7.nickname = target[0].value;
+      }
+
+
+      const b = document.querySelectorAll(".appEditingInputClass");
+      for (let item of b) {
+        item.style.display = "none";
+      }
+
+      this.appNameEditing1 = false;
+      this.appNameEditing2 = false;
+      this.appNameEditing3 = false;
+      this.appNameEditing4 = false;
+      this.appNameEditing5 = false;
+      this.appNameEditing6 = false;
+      this.appNameEditing7 = false;
+
+      this.numCnt += 1;
+
+      if (value === 1) {
+        this.modalOneCheck = true;
+      } else if (value === 2) {
+        this.modalTwoCheck = true;
+      } else if (value === 3) {
+        this.modalThreeCheck = true;
+      } else if (value === 4) {
+        this.modalFourCheck = true;
+      } else if (value === 5) {
+        this.modalFiveCheck = true;
+      } else if (value === 6) {
+        this.modalSixCheck = true;
+      } else if (value === 7) {
+        this.modalSevenCheck = true;
+      }
+    },
+
     setNickname(idx, value) {
       console.log(value);
       console.log(idx);
@@ -567,7 +699,20 @@ export default {
   width: 100%;
   z-index: 1;
   justify-content: center;
+  font-size: 14px;
 }
+
+.appEditing > input {
+  position: absolute;
+  width: 240px;
+  top: 165px;
+  left: 30px;
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 20px;
+}
+
 
 .memo-right {
   left : 200px;
@@ -766,6 +911,113 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 2px;
+}
+
+.appEditing {
+  position: absolute;
+  left: calc(50% - 180px);
+  top: calc(300px);
+  width: 360px;
+  height: 700px;
+  z-index: 990;
+}
+
+#appEditingInput4 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#appEditingInput5 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+#appEditingInput6 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+#appEditingInput7 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 80px);
+  top: calc(300px + 160px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+#appEditingInput1 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px + 95px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+#appEditingInput2 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px + 95px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+#appEditingInput3 {
+  position: absolute;
+  width: 230px;
+  left: calc(50% - 180px + 35px);
+  top: calc(300px + 160px +  95px);
+  text-align: center;
+  border: 0px;
+  font-weight: 700;
+  height: 30px;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+
+.pencil {
+  margin-right: 5px;
 }
 
 </style>
