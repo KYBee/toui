@@ -31,10 +31,18 @@
     <div class="selectItem" v-if="categorizingOp === 3" style="color: darkblue;" @click="appCategorizing(3)">회사 별&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
     <div class="selectItem" v-else @click="appCategorizing(3)">회사 별</div>
   </div>
+  <div class="selectBoxDetail" v-show="categoryItemSelectCheck">
+    <AppRecommendVue v-model:categoryType="this.categorizingOp" @closeSelectItemModal="closeSelectItemModal" />
+  </div>
+
 </template>
 
 <script>
+import AppRecommendVue from './AppRecommendVue.vue';
 export default {
+  components: {
+    AppRecommendVue,
+  },
   props: {
     numberCnt:Number,
   },
@@ -43,6 +51,7 @@ export default {
       defaultOptionCheck: true,
       sortingOptionCheck: false,
       categorizingOptionCheck: false,
+      categoryItemSelectCheck: false,
       sortingOp: 0,
       categorizingOp: 0,
     }
@@ -52,17 +61,20 @@ export default {
       this.defaultOptionCheck = true;
       this.categorizingOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.categoryItemSelectCheck = false;
     }
   },
   methods: {
     sortingOptions: function() {
       this.defaultOptionCheck = false;
       this.categorizingOptionCheck = false;
+      this.categoryItemSelectCheck = false;
       this.sortingOptionCheck = true;
     },
     categorizingOptions: function() {
       this.defaultOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.categoryItemSelectCheck = false;
       this.categorizingOptionCheck = true;
     },
     appSorting: function(value) {
@@ -70,14 +82,23 @@ export default {
       this.defaultOptionCheck = true;
       this.categorizingOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.categoryItemSelectCheck = false;
       this.sortingOp = value;
     },
     appCategorizing: function(value) {
-      this.$emit("appCategorizing", value);
-      this.defaultOptionCheck = true;
+      this.defaultOptionCheck = false;
       this.categorizingOptionCheck = false;
       this.sortingOptionCheck = false;
+      this.categoryItemSelectCheck = true;
       this.categorizingOp = value;
+    },
+    closeSelectItemModal: function(value) {
+      this.$emit("appCategorizing", this.categorizingOp, value);
+
+      this.defaultOptionCheck = true;
+      this.sortingOptionCheck = false;
+      this.categoryItemSelectCheck = false;
+      this.categorizingOptionCheck = false;
     }
   }
 }
