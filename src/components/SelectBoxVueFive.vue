@@ -1,7 +1,7 @@
 <template>
   <div class="selectBox" v-show="defaultOptionCheck">
     <div class="selectItem" @click="sortingOptions">정렬</div>
-    <div class="selectItem" @click="categorizingOptions">카테고리</div>
+    <div class="selectItem" @click="categorizingOptions">그룹핑</div>
     <div class="selectItem">설정</div>
   </div>
   <div class="selectBox" v-show="sortingOptionCheck">
