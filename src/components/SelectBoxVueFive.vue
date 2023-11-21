@@ -4,15 +4,12 @@
     <div class="selectItem" @click="categorizingOptions">카테고리</div>
     <div class="selectItem">설정</div>
   </div>
-  <div class="selectBox dark" v-show="sortingOptionCheck">
+  <div class="selectBox" v-show="sortingOptionCheck">
     <div class="selectItem" v-if="sortingOp === 0" style="color: darkblue;" @click="appSorting(0)">직접 설정&nbsp;<font-awesome-icon :icon="['fas', 'check']" /> </div>
     <div class="selectItem" v-else @click="appSorting(0)">직접 설정</div>
 
     <div class="selectItem" v-if="sortingOp === 1" style="color: darkblue;" @click="appSorting(1)">가나다 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
     <div class="selectItem" v-else @click="appSorting(1)">가나다 순</div>
-
-    <div class="selectItem" v-if="sortingOp === 2" style="color: darkblue;" @click="appSorting(2)">설치 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
-    <div class="selectItem" v-else @click="appSorting(2)">설치 순</div>
 
     <div class="selectItem" v-if="sortingOp === 3" style="color: darkblue;" @click="appSorting(3)">빈도 순&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
     <div class="selectItem" v-else @click="appSorting(3)">빈도 순</div>
@@ -20,7 +17,7 @@
   </div>
   <div class="selectBox dark" v-show="categorizingOptionCheck">
     <div class="selectItem" v-if="categorizingOp === 0" style="color: darkblue;" @click="appCategorizing(0)">직접 설정&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
-    <div class="selectItem" v-else @click="appCategorizing(0)">직접 설정</div>
+    <div class="selectItem" v-else @click="appCategorizing(0)">없음</div>
 
     <div class="selectItem" v-if="categorizingOp === 1" style="color: darkblue;" @click="appCategorizing(1)">기능 별&nbsp;<font-awesome-icon :icon="['fas', 'check']" /></div>
     <div class="selectItem" v-else @click="appCategorizing(1)">기능 별</div>
@@ -112,26 +109,22 @@ export default {
   justify-content: center;
   align-items: center;
   width: 160px;
-  border-radius: 20px;
-  background: #EFEFEF;
-  opacity: 0.9;
+  border-radius: 25px;
+  background: #FFF;
   top: 30px;
   left: 190px;
   position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .selectItem {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
 }
 
-.dark {
-  background: #E6E6E6;
-  opacity: 0.9;
-}
 </style>

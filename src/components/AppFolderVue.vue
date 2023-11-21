@@ -1,7 +1,6 @@
 <template>
   <div class="appTotalContainer" @click="appFolderDetailOpen">
     <div class="appIconContainer">
-      <img class="appIcon" :src="this.application.src" alt="">
     </div>
     <div class="appIconCompress">
       <div class="appIconImg" v-for="(app, index) in appDisplay" :key="index">
@@ -14,12 +13,12 @@
 </template>
 
 <script>
+
 export default {
   components: {
   },
   data() {
     return {
-      
       appFolderDetailCheck:false,
       folderName:"",
       apps:[],
@@ -166,6 +165,8 @@ export default {
 .appIconContainer {
   width: 50px;
   height: 50px;
+  border-radius: 20px;
+  background: #dac8eb;
   border: 0px;
 }
 
@@ -183,7 +184,7 @@ export default {
   align-items: flex-start;
   font-size: .7rem;
   padding: .3rem;
-  color: black;
+  color: white;
   width: 70px;
   height: 40px;
   flex-wrap: wrap;
@@ -210,6 +211,6 @@ export default {
   flex-wrap : wrap;
   z-index: 2;
   position: relative;
-  top: -50px;
+  top: -48px;
 }
 </style>
