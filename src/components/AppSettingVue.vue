@@ -35,7 +35,7 @@
                       <div class="app-option-item-toggle">
                           <div class="app-mix">
                               <div class="app-option-title">
-                                  별칭모드 사용
+                                  앱을 별칭으로 노출하기
                               </div>
                               <div class="app-option-subtitle-v2">
                                   화면에 별칭이 표시됩니다.

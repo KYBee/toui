@@ -30,6 +30,7 @@ export default {
       {idx: 26, name: "당근", src: require("@/assets/img/icon/당근.png"), function: 5, color: 4, company: 10, numCnt: 110, op: 0},
       {idx: 28, name: "네이버 지도", src: require("@/assets/img/icon/네이버 지도.png"), function: 6, color: 4, company: 5, numCnt: 390, op: 0},
       {idx: 29, name: "TMAP", src: require("@/assets/img/icon/TMAP.png"), function: 6, color: 4, company: 10, numCnt: 490, op: 0},
+      {idx: 22, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 10, color: 4, company: 2, numCnt: 40, op: 0},
       {idx: 30, name: "YouTube", src: require("@/assets/img/icon/YouTube.png"), function: 7, color: 4, company: 2, numCnt: 290, op: 0},
       {idx: 37, name: "삼성서울병원", src: require("@/assets/img/icon/삼성서울병원.png"), function: 9, color: 4, company: 10, numCnt: 780, op: 0},
       {idx: 38, name: "네이버 블로그", src: require("@/assets/img/icon/네이버 블로그.png"), function: 4, color: 4, company: 5, numCnt: 20, op: 0},

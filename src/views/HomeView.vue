@@ -10,7 +10,7 @@
         <router-link style="text-decoration:none" to="/three"><button class="btn">키보드 음차 기능</button></router-link>
       </div>
       <div class="btn-container">
-        <router-link to="/"><button class="last-btn">발표자료 다운로드</button></router-link>
+        <a href="/ppt/ToUI_PPT.pdf" target="_self"><button class="last-btn">발표자료 다운로드</button></a>
       </div>
     </nav>
   </div>

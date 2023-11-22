@@ -29,7 +29,6 @@ export default {
       {idx: 14, name: "카메라", src: require("@/assets/img/icon/카메라.png"), function: 3, color: 1, company: 1, numCnt: 80, op: 0},
       {idx: 21, name: "11번가", src: require("@/assets/img/icon/11번가.png"), function: 5, color: 1, company: 10, numCnt: 600, op: 0},
       {idx: 27, name: "AliExpress", src: require("@/assets/img/icon/AliExpress.png"), function: 5, color: 1, company: 10, numCnt: 650, op: 0},
-      {idx: 22, name: "YouTube Music", src: require("@/assets/img/icon/YouTube Music.png"), function: 10, color: 1, company: 2, numCnt: 40, op: 0},
       {idx: 32, name: "TVING", src: require("@/assets/img/icon/TVING.png"), function: 7, color: 1, company: 10, numCnt: 150, op: 0},
       {idx: 34, name: "요기요", src: require("@/assets/img/icon/요기요.png"), function: 8, color: 1, company: 10, numCnt: 630, op: 0},
       {idx: 35, name: "BBQ", src: require("@/assets/img/icon/BBQ.png"), function: 8, color: 1, company: 10, numCnt: 720, op: 0},

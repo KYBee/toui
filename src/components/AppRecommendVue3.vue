@@ -145,7 +145,7 @@ export default {
         ],
         [
           "삼성",
-          "구글",
+          "YouTube",
           "카카오",
           "Meta",
           "네이버",

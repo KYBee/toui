@@ -30,7 +30,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -152,7 +152,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -231,7 +231,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -270,7 +270,7 @@
                 </div>
                 <div class="memoOption">
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/select.svg" alt=""></div>선택</div>
-                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추...</div>
+                  <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/homeAdd.svg" alt=""></div>홈 화면에 추가</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/uninstall.svg" alt=""></div>설치 삭제</div>
                   <div class="memoOptionDetail"><div class="memoOptionIconImg"><img src="@/assets/widget.svg" alt=""></div>위젯</div>
                 </div>
@@ -733,8 +733,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: .6rem;
-  width: 55px;
+  font-size: 8px;
+  width: 58px;
 }
 
 .memoOption img {
