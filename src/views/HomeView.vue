@@ -2,7 +2,7 @@
   <div class="home">
     <nav>
       <div class="btn-container">
-        <router-link style="text-decoration:none" to="/five"><button class="btn">앱 정렬 <br />그루핑 기능</button></router-link>
+        <router-link style="text-decoration:none" to="/five"><button class="btn">앱 정렬 <br />그룹핑 기능</button></router-link>
         <router-link style="text-decoration:none" to="/four"><button class="btn">아이콘 크기<br />설정 기능</button></router-link>
       </div>
       <div class="btn-container">
