@@ -3,6 +3,7 @@
     <div class="selectItem" @click="sortingOptions">정렬</div>
     <div class="selectItem" v-if="sortingOp !== 0" @click="categorizingOptions">그룹핑</div>
     <div class="selectItem">설정</div>
+    <div class="selectItem" v-if="sortingOp === 0">페이지 정리</div>
   </div>
   <div class="selectBox" v-show="sortingOptionCheck">
     <div class="selectItem" v-if="sortingOp === 0" style="color: darkblue;" @click="appSorting(0)">직접 설정&nbsp;<font-awesome-icon :icon="['fas', 'check']" /> </div>
